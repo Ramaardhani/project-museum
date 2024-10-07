@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangkit Bela Negaraku Jaya Indonesiaku</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .hero-image {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .image-container {
+            height: 50vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .custom-underline {
+            text-decoration: none;
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 1px;
+        }
+
+        .underline-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid currentColor;
+            padding-bottom: 0.5rem;
+        }
+
+        .underline-container h2 {
+            margin: 0;
+        }
+
+        .underline-container button {
+            margin-left: auto;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans">
+    <header class="relative">
+        <nav class="absolute top-0 left-0 right-0 z-10 flex justify-between items-center p-4">
+            <img src="/src/img/LOGO UPNVJ.png" alt="Logo" class="w-12 h-12">
+            <div class="flex space-x-3 text-white">
+                <a href="/src/main.html" class="hover:underline">Beranda</a>
+                <a href="#" class="hover:underline">Galeri</a>
+                <a href="/src/berita.html" class="hover:underline">Berita</a>
+                <a href="#" class="hover:underline">Tentang Kami</a>
+            </div>
+        </nav>
+        <div class="image-container">
+            <img src="/src/img/Rectangle 15.png" alt="Hero Image" class="hero-image">
+            <div class="image-overlay">
+                <h1 class="text-2xl md:text-4xl font-bold mb-4 text-center">Bangkit Bela Negaraku<br>Jaya Indonesiaku</h1>
+                <button class="bg-white text-black px-4 py-2 md:px-6 md:py-2 rounded-full hover:bg-gray-200 transition text-sm md:text-base">LEARN MORE</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="space-y-4">
+                <h2 class="text-xl md:text-2xl font-bold flex justify-between items-center">
+                    <span class="custom-underline">Old Masters</span>
+                    <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </h2>
+                <div class="bg-gray-200 h-32 md:h-48"></div>
+                <h3 class="font-semibold text-xl custom-underline">Perjanjian Roem Royen</h3>
+                <p class="text-sm custom-underline">7 Mei 1949</p>
+                <p class="text-sm custom-underline">Hotel Des Indes, Jakarta</p>
+            </div>
+            <div class="space-y-4">
+                <h2 class="text-xl md:text-2xl font-bold flex justify-between items-center">
+                    <span class="custom-underline">Old Masters</span>
+                    <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </h2>
+                <div class="bg-gray-200 h-32 md:h-48"></div>
+                <h3 class="font-semibold text-xl custom-underline">Konferensi Meja Bundar</h3>
+                <p class="text-sm custom-underline">23 Agustus - 2 November 1949</p>
+                <p class="text-sm custom-underline">Den Haag, Belanda</p>
+            </div>
+            <div class="space-y-4">
+                <h2 class="text-xl md:text-2xl font-bold flex justify-between items-center">
+                    <span class="custom-underline">Old Masters</span>
+                    <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </h2>
+                <div class="bg-gray-200 h-32 md:h-48"></div>
+                <h3 class="font-semibold text-xl custom-underline">Proklamasi Kemerdekaan</h3>
+                <p class="text-sm custom-underline">17 Agustus 1945</p>
+                <p class="text-sm custom-underline">Jl. Pegangsaan Timur 56, Jakarta</p>
+            </div>
+        </section>
+
+        <section class="flex flex-col md:flex-row items-center bg-gray-100">
+            <div class="md:w-1/2 p-4 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Welcome To<br>The Art And History<br>Museum Bela Negara</h2>
+                <p class="mb-4 text-sm md:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                <button class="flex items-center space-x-2 font-semibold text-sm md:text-base">
+                    <span>MORE ABOUT</span>
+                    <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="md:w-1/2 h-48 md:h-64 lg:h-80">
+                <img src="/src/img/Rectangle 12.png" alt="Museum Interior" class="w-full h-full object-cover object-center">
+            </div>
+        </section>
+
+        <section class="my-8 md:my-16">
+            <div class="underline-container">
+                <h2 class="text-2xl md:text-3xl font-bold">Galery</h2>
+                <button class="flex items-center space-x-2 font-semibold text-sm md:text-base">
+                    <span>VIEW ALL GALERY</span>
+                    <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="text-center text-xl md:text-3xl font-bold pt-6">
+                DISINI DI ISI FOTO FOTO DOKUMENTASI KITA<br>
+                SEMUA JADI DI KOSONGKAN DAHULU KARENA<br>
+                MAU DI TARO ABSTRAK AJA
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gray-800 text-white py-4 md:py-8">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between space-y-8 md:space-y-0">
+            <div class="mb-4 md:mb-0 space-y-3">
+                <h3 class="font-semibold text-lg mb-4">UPN Museum Virtual</h3>
+                <p>Jalan R.S. Fatmawati Raya, Pondok Labu, Cilandak, South Jakarta City,<br>Jakarta 12450</p>
+                <p>Email: <a href="mailto:info@museumvirtual.id" class="underline">info@museumvirtual.id</a></p>
+                <p>Telepon: (0274) 123456</p>
+            </div>
+            <div class="mb-4 md:mb-0 space-y-3">
+                <h3 class="font-semibold text-lg mb-4">Navigasi</h3>
+                <ul class="space-y-2"> 
+                    <li><a href="/src/main.html" class="hover:underline">Beranda</a></li>
+                    <li><a href="#" class="hover:underline">Galeri</a></li>
+                    <li><a href="/src/berita.html" class="hover:underline">Berita</a></li>
+                    <li><a href="#" class="hover:underline">Tentang Kami</a></li>
+                </ul>
+            </div>
+            <div class="space-y-3">
+                <h3 class="font-semibold text-lg mb-4">Ikuti Kami</h3>
+                <div class="flex space-x-4">
+                    <a href="https://wa.me/6281380461288?text=Halo%20saya%20tertarik%20dengan%20informasi%20museum" target="_blank">
+                        <img src="/src/img/whatsapp.svg" alt="WhatsApp" class="w-6 h-6">
+                    </a>                    
+                    <a href="https://www.instagram.com/farsbiy" target="_blank">
+                        <img src="/src/img/instagram.svg" alt="Instagram" class="w-6 h-6">
+                    </a>                    
+                    <a href="https://www.facebook.com/Ramaardhani2" target="_blank">
+                        <img src="/src/img/facebook.svg" alt="Facebook" class="w-6 h-6">
+                    </a>
+                    <a href="#"><img src="/src/img/telegram.svg" alt="Telegram" class="w-6 h-6"></a>
+                </div>
+            </div>
+        </div>
+    </footer>    
+</body>
+</html>
