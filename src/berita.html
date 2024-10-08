@@ -4,19 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berita</title>
-    <link rel="stylesheet" href="/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        * {
-            background-color: yellowgreen;
-        }
-    </style>
 </head>
 <body>
+    <!-- Header -->
     <header class="relative">
-        <nav class="absolute top-0 left-0 right-0 z-10 flex justify-between items-center p-4">
+        <nav class="absolute top-0 left-0 right-0 z-10 flex justify-between items-center p-4 bg-white shadow-md">
             <img src="/src/img/LOGO UPNVJ.png" alt="Logo" class="w-12 h-12">
-            <div class="flex space-x-3 text-black">
+            <div class="flex space-x-4 text-black">
                 <a href="/src/main.html" class="hover:underline">Beranda</a>
                 <a href="#" class="hover:underline">Galeri</a>
                 <a href="/src/berita.html" class="hover:underline">Berita</a>
@@ -25,14 +20,110 @@
         </nav>
     </header>
 
-    <main class="container m-auto py-20 px-4">
-        <div class="rounded-lg overflow-hidden shadow-lg justify-center">
-            <img src="/src/img/Berita1.png" alt="Featured Image" class="w-full h-64 object-cover rounded">
-            <div class="bg-white p-6">
-                <h2 class="text-2xl font-bold mb-2">Perpisahan Magang Kampus Merdeka: Pemahaman Holistik Dalam Dunia Permuseuman</h2>
-                <p class="text-gray-700">Desember 17, 2023</p>
+    <!-- Main Content -->
+    <main class="flex flex-col items-center pt-24 px-4 md:px-6 lg:px-8">
+        <!-- Hero Section -->
+        <div class="relative w-full max-w-7xl shadow-2xl">  <!-- max-w-7xl untuk memperlebar konten -->
+            <img src="/src/img/Frame96.png" alt="Gambar" class="w-full h-auto object-cover rounded-xl">
+            <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t rounded-b-xl">
+                <h2 class="text-white text-2xl font-bold">Perpisahan Magang Kampus Merdeka:</h2>
+                <h2 class="text-white text-xl font-semibold mb-2">Pemahaman Holistik Dalam Dunia Pemuseuman</h2>
+                <p class="text-white text-lg">Desember 17, 2023</p>
             </div>
         </div>
+
+        <!-- Berita Section -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 w-full max-w-7xl"> <!-- max-w-7xl untuk membuat lebih lebar -->
+            <!-- Card 1 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="/src/img/Rectangle 12.png" alt="Image 1" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h2 class="text-xl font-bold mb-2">Museum Batik Indonesia</h2>
+                    <p class="text-gray-600">Sambut Umat Katolik</p>
+                    <p class="text-gray-600 mb-2">Tuli Asia</p>
+                    <p class="text-gray-500 text-sm">8 hours ago</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="/src/img/Rectangle 12.png" alt="Image 2" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h2 class="text-xl font-bold mb-2">Museum Batik Indonesia</h2>
+                    <p class="text-gray-600">Sambut Umat Katolik</p>
+                    <p class="text-gray-600 mb-2">Tuli Asia</p>
+                    <p class="text-gray-500 text-sm">8 hours ago</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="/src/img/Rectangle 12.png" alt="Image 3" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h2 class="text-xl font-bold mb-2">Museum Batik Indonesia</h2>
+                    <p class="text-gray-600">Sambut Umat Katolik</p>
+                    <p class="text-gray-600 mb-2">Tuli Asia</p>
+                    <p class="text-gray-500 text-sm">8 hours ago</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artikel Section -->
+        <section class="mt-12 w-full max-w-7xl">
+            <!-- Card 1 -->
+            <article class="bg-white shadow-lg rounded-lg overflow-hidden flex mb-8">
+                <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-1/3 h-48 object-cover">
+                <div class="p-6 w-2/3">
+                    <h2 class="text-2xl font-bold mb-2">DKI Jakarta Raih Piala Mahavidya pada LCCM 2023, Mendikbudristek Dorong Generasi Muda Cintai Museum</h2>
+                    <p class="text-gray-600 mb-4">Jakarta, 12 Oktober 2023 – Lomba Cerdas Cermat Museum (LCCM) tahun 2023 secara resmi ditutup yang ditandai dengan pengumuman para pemenang...</p>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="bg-white shadow-lg rounded-lg overflow-hidden flex mb-8">
+                <img src="/src/img/Rectangle 15.png" alt="Image 2" class="w-1/3 h-48 object-cover">
+                <div class="p-6 w-2/3">
+                    <h2 class="text-2xl font-bold mb-2">DKI Jakarta Raih Piala Mahavidya pada LCCM 2023, Mendikbudristek Dorong Generasi Muda Cintai Museum</h2>
+                    <p class="text-gray-600 mb-4">Jakarta, 12 Oktober 2023 – Lomba Cerdas Cermat Museum (LCCM) tahun 2023 secara resmi ditutup yang ditandai dengan pengumuman para pemenang...</p>
+                </div>
+            </article>
+        </section>
     </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4 md:py-8">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between space-y-8 md:space-y-0">
+            <div class="mb-4 md:mb-0 space-y-3">
+                <h3 class="font-semibold text-lg mb-4">UPN Museum Virtual</h3>
+                <p>Jalan R.S. Fatmawati Raya, Pondok Labu, Cilandak, South Jakarta City,<br>Jakarta 12450</p>
+                <p>Email: <a href="mailto:info@museumvirtual.id" class="underline">info@museumvirtual.id</a></p>
+                <p>Telepon: (0274) 123456</p>
+            </div>
+            <div class="mb-4 md:mb-0 space-y-3">
+                <h3 class="font-semibold text-lg mb-4">Navigasi</h3>
+                <ul class="space-y-2"> 
+                    <li><a href="/src/main.html" class="hover:underline">Beranda</a></li>
+                    <li><a href="#" class="hover:underline">Galeri</a></li>
+                    <li><a href="/src/berita.html" class="hover:underline">Berita</a></li>
+                    <li><a href="#" class="hover:underline">Tentang Kami</a></li>
+                </ul>
+            </div>
+            <div class="space-y-3">
+                <h3 class="font-semibold text-lg mb-4">Ikuti Kami</h3>
+                <div class="flex space-x-4">
+                    <a href="https://wa.me/6281380461288?text=Halo%20saya%20tertarik%20dengan%20informasi%20museum" target="_blank">
+                        <img src="/src/img/whatsapp.svg" alt="WhatsApp" class="w-6 h-6">
+                    </a>                    
+                    <a href="https://www.instagram.com/farsbiy" target="_blank">
+                        <img src="/src/img/instagram.svg" alt="Instagram" class="w-6 h-6">
+                    </a>                    
+                    <a href="https://www.facebook.com/Ramaardhani2" target="_blank">
+                        <img src="/src/img/facebook.svg" alt="Facebook" class="w-6 h-6">
+                    </a>
+                    <a href="#"><img src="/src/img/telegram.svg" alt="Telegram" class="w-6 h-6"></a>
+                </div>
+            </div>
+        </div>
+    </footer>  
 </body>
 </html>
