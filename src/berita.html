@@ -5,6 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berita</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-container h3 {
+        font-weight: 600;
+        font-size: 27px;
+        }
+
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .slider-card {
+            min-width: 25%;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: black;
+            background-color: transparent;
+            border: none;
+            padding: 0.5rem;
+            font-size: 2rem;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .slider-arrow.left {
+            right: 40px;
+            top: 28px;
+        }
+
+        .slider-arrow.right {
+            right: 10px;
+            top: 28px;
+        }
+
+        .slider-arrow.disabled {
+            color: gray;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+            .slider-card {
+                min-width: 100%;
+            }
+
+            .slider-arrow {
+                display: none;
+            }
+
+            .slider-container {
+                overflow-x: scroll;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="relative">
@@ -18,7 +85,6 @@
             </div>
         </nav>
     </header>
-
     <main class="flex flex-col items-center pt-24 px-6 md:px-12 lg:px-16 xl:px-24">
         <div class="relative w-full shadow-2xl">
             <img src="/src/img/Frame96.png" alt="Gambar" class="w-full h-auto object-cover rounded-xl">
@@ -28,46 +94,89 @@
                 <p class="text-white text-sm md:text-base">Desember 17, 2023</p>
             </div>
         </div>
-
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 w-full">
-            <div class="bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
-                <img src="/src/img/Rectangle 12.png" alt="Image 1" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
-                    <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
-                    <p class="text-gray-600 mb-2 text-sm md:text-base">Tuli Asia</p>
-                    <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+        <section class="slider-container mt-12 w-full shadow-lg">
+            <button id="leftArrow" class="slider-arrow left" onclick="slide(-1)" aria-label="Previous">
+                <img src="/src/img/arrow-left.svg" alt="" class="w-7">
+            </button>
+            <h3 class="pl-1 pt-2">Lastest News</h3>
+            <div id="sliderTrack" class="slider-track">
+                <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                    <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                        <p class="text-gray-600 mb-2 text-sm md:text-base">Tuli Asia</p>
+                        <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                    <img src="/src/img/Rectangle 12.png" alt="Image 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                        <p class="text-gray-600 mb-2 text-sm md:text-base">Tuli Asia</p>
+                        <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                    <img src="/src/img/Rectangle 12.png" alt="Image 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                        <p class="text-gray-600 mb-2 text-sm md:text-base">Tuli Asia</p>
+                        <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                    <img src="/src/img/Rectangle 12.png" alt="Image 4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                        <p class="text-gray-600 mb-2 text-sm md:text-base">Tuli Asia</p>
+                        <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                    <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                        <p class="text-gray-600 mb-2 text-sm md:text-base">Tuli Asia</p>
+                        <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                    <img src="/src/img/Rectangle 12.png" alt="Image 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                        <p class="text-gray-600 mb-2 text-sm md:text-base">Tuli Asia</p>
+                        <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                    <img src="/src/img/Rectangle 12.png" alt="Image 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                        <p class="text-gray-600 mb-2 text-sm md:text-base">Tuli Asia</p>
+                        <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                    <img src="/src/img/Rectangle 12.png" alt="Image 4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                        <p class="text-gray-600 mb-2 text-sm md:text-base">Tuli Asia</p>
+                        <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                    </div>
                 </div>
             </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
-                <img src="/src/img/Rectangle 12.png" alt="Image 2" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
-                    <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
-                    <p class="text-gray-600 mb-2 text-sm md:text-base">Tuli Asia</p>
-                    <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
-                <img src="/src/img/Rectangle 12.png" alt="Image 3" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
-                    <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
-                    <p class="text-gray-600 mb-2 text-sm md:text-base">Tuli Asia</p>
-                    <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
-                <img src="/src/img/Rectangle 12.png" alt="Image 2" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
-                    <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
-                    <p class="text-gray-600 mb-2 text-sm md:text-base">Tuli Asia</p>
-                    <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
-                </div>
-            </div>
+            <button id="rightArrow" class="slider-arrow right" onclick="slide(1)" aria-label="Next">
+                <img src="/src/img/arrow-right.svg" alt="" class="w-7">
+            </button>
         </section>
-
         <section class="mt-12 w-full">
             <article class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-wrap md:flex-nowrap mb-8">
                 <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full md:w-1/3 h-48 object-cover">
@@ -92,7 +201,6 @@
             </article>
         </section>
     </main>
-
     <footer class="bg-gray-800 text-white py-4 md:py-8">
         <div class="mx-auto px-6 flex flex-col md:flex-row justify-between md:gap-x-16 space-y-8 md:space-y-0">
             <div class="mb-4 md:mb-0 space-y-3">
@@ -101,7 +209,6 @@
                 <p class="text-xl">Email: <a href="mailto:info@museumvirtual.id" class="underline text-blue-600">info@museumvirtual.id</a></p>
                 <p class="text-xl">Telepon: (0274) 123456</p>
             </div>
-    
             <div class="mb-4 md:mb-0 space-y-4">
                 <h3 class="font-semibold text-xl mb-4">Navigasi</h3>
                 <ul class="space-y-2"> 
@@ -111,7 +218,6 @@
                     <li><a href="#" class="hover:underline text-xl">Tentang Kami</a></li>
                 </ul>
             </div>
-    
             <div class="space-y-3">
                 <h3 class="font-semibold text-xl mb-4">Ikuti Kami</h3>
                 <div class="flex space-x-4">
@@ -129,5 +235,83 @@
             </div>
         </div>
     </footer>
+    <script>
+        let currentIndex = 0;
+        let autoSlideInterval;
+    
+        function updateArrows() {
+            const totalSlides = document.getElementById('sliderTrack').children.length;
+            const leftArrow = document.getElementById('leftArrow');
+            const rightArrow = document.getElementById('rightArrow');
+            const slidesPerView = window.innerWidth > 768 ? 4 : 1;
+    
+            if (currentIndex <= 0) {
+                leftArrow.classList.add('disabled');
+            } else {
+                leftArrow.classList.remove('disabled');
+            }
+    
+            if (currentIndex >= totalSlides - slidesPerView) {
+                rightArrow.classList.add('disabled');
+            } else {
+                rightArrow.classList.remove('disabled');
+            }
+        }
+    
+        function slide(direction) {
+            const track = document.getElementById('sliderTrack');
+            const totalSlides = track.children.length;
+            const slidesPerView = window.innerWidth > 768 ? 4 : 1;
+            const sliderWidth = track.clientWidth / slidesPerView;
+    
+            currentIndex += direction * slidesPerView;
+    
+            if (currentIndex >= totalSlides) {
+                currentIndex = 0;
+            }
+    
+            if (currentIndex < 0) {
+                currentIndex = totalSlides - slidesPerView;
+            }
+
+            track.style.transform = `translateX(-${currentIndex * sliderWidth}px)`;
+
+            updateArrows();
+        }
+
+        function startAutoSlide() {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(() => {
+                slide(1);
+            }, 3000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        updateArrows();
+        startAutoSlide();
+
+        window.addEventListener('resize', () => {
+            updateArrows();
+
+            const track = document.getElementById('sliderTrack');
+            const slidesPerView = window.innerWidth > 768 ? 4 : 1;
+            const sliderWidth = track.clientWidth / slidesPerView;
+            track.style.transform = `translateX(-${currentIndex * sliderWidth}px)`;
+        });
+
+        const sliderContainer = document.querySelector('.slider-container');
+
+        sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+        sliderContainer.addEventListener('mouseleave', startAutoSlide);
+
+        document.querySelectorAll('.slider-card').forEach(card => {
+            card.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+        });
+    </script>
 </body>
 </html>
