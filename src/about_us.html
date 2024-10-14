@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .hero-image {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .image-container {
+            height: 50vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .team-card img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <header class="relative">
+        <nav class="fixed top-0 left-0 right-0 z-10 flex justify-between items-center p-4 bg-white bg-opacity-10 backdrop-blur-md">
+            <img src="/src/img/LOGO UPNVJ.png" alt="Logo" class="w-12 h-12">
+            <div class="flex space-x-4 text-black text-lg">
+                <a href="/src/main.html" class="hover:underline">Beranda</a>
+                <a href="/src/galeri.html" class="hover:underline">Galeri</a>
+                <a href="/src/berita.html" class="hover:underline">Berita</a>
+                <a href="/src/about_us.html" class="hover:underline">Tentang Kami</a>
+            </div>
+        </nav>
+        <div class="image-container pt-16">
+            <img src="/src/img/Rectangle 15.png" alt="Hero Image" class="hero-image">
+            <div class="image-overlay">
+                <h1 class="text-2xl md:text-2xl font-bold mb-4 text-center">About Us</h1>
+                <p class="text-center text-base md:text-base px-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita est fugiat velit obcaecati, consectetur commodi rerum ducimus repellendus! Accusamus perferendis corporis eius pariatur ad debitis commodi voluptas amet suscipit laborum sit molestiae dicta quasi, eum animi! Facilis fugiat doloribus quam nesciunt vitae totam autem nemo expedita explicabo, non in dolore?</p>
+            </div>
+        </div>
+    </header>
+    <section class="py-16 px-8">
+        <div class="md:flex justify-between items-center space-y-4 md:space-y-0">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold mb-4">Tentang Project</h2>
+                <p class="text-base text-gray-700 leading-relaxed">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, blanditiis minus hic maiores corrupti perspiciatis ab repellat velit, harum vero corporis minima veritatis, officia quas porro at repellendus exercitationem totam? Quidem error aut eius, inventore earum sit accusantium. Nemo corporis facere sapiente aperiam. Praesentium nostrum omnis laudantium commodi totam, eaque quidem facilis fuga maxime molestias minima earum odit obcaecati dignissimos illo labore, perferendis tempora recusandae hic, ullam repellendus voluptas minus natus alias? Nesciunt a commodi veniam quidem libero ducimus neque accusantium dolorum reiciendis nobis pariatur dolor sint facere explicabo voluptatem quisquam culpa possimus maiores nulla, nam, cupiditate perferendis, in amet?
+                </p>
+            </div>
+            <div class="md:w-1/2">
+                <img src="/src/img/Rectangle 12.png" alt="Project Image" class="w-full rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
+    <section class="py-16 px-8">
+        <h2 class="text-center text-3xl font-bold mb-8">Meet Our Beautiful Team</h2>
+        <div class="flex overflow-x-auto space-x-8 py-4">
+            <div class="team-card relative bg-white shadow-lg rounded-lg overflow-hidden w-64 flex-shrink-0">
+                <img src="/src/img/Berita1.png" alt="Team Member" class="w-full h-48 object-cover">
+                <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <h3 class="text-xl font-bold text-white">Member 1</h3>
+                    <p class="text-sm text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, beatae.</p>
+                </div>
+            </div>
+            <div class="team-card relative bg-white shadow-lg rounded-lg overflow-hidden w-64 flex-shrink-0">
+                <img src="/src/img/Berita1.png" alt="Team Member" class="w-full h-48 object-cover">
+                <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <h3 class="text-xl font-bold text-white">Member 2</h3>
+                    <p class="text-sm text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, deserunt.</p>
+                </div>
+            </div>
+            <div class="team-card relative bg-white shadow-lg rounded-lg overflow-hidden w-64 flex-shrink-0">
+                <img src="/src/img/Berita1.png" alt="Team Member" class="w-full h-48 object-cover">
+                <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <h3 class="text-xl font-bold text-white">Member 3</h3>
+                    <p class="text-sm text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, explicabo!</p>
+                </div>
+            </div>
+            <div class="team-card relative bg-white shadow-lg rounded-lg overflow-hidden w-64 flex-shrink-0">
+                <img src="/src/img/Berita1.png" alt="Team Member" class="w-full h-48 object-cover">
+                <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <h3 class="text-xl font-bold text-white">Member 4</h3>
+                    <p class="text-sm text-gray-200">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam, et?</p>
+                </div>
+            </div>
+            <div class="team-card relative bg-white shadow-lg rounded-lg overflow-hidden w-64 flex-shrink-0">
+                <img src="/src/img/Berita1.png" alt="Team Member" class="w-full h-48 object-cover">
+                <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <h3 class="text-xl font-bold text-white">Member 5</h3>
+                    <p class="text-sm text-gray-200">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, sapiente?</p>
+                </div>
+            </div>
+            <div class="team-card relative bg-white shadow-lg rounded-lg overflow-hidden w-64 flex-shrink-0">
+                <img src="/src/img/Berita1.png" alt="Team Member" class="w-full h-48 object-cover">
+                <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <h3 class="text-xl font-bold text-white">Member 6</h3>
+                    <p class="text-sm text-gray-200">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, qui?</p>
+                </div>
+            </div>
+            <div class="team-card relative bg-white shadow-lg rounded-lg overflow-hidden w-64 flex-shrink-0">
+                <img src="/src/img/Berita1.png" alt="Team Member" class="w-full h-48 object-cover">
+                <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <h3 class="text-xl font-bold text-white">Member 7</h3>
+                    <p class="text-sm text-gray-200">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, est.</p>
+                </div>
+            </div>
+            <div class="team-card relative bg-white shadow-lg rounded-lg overflow-hidden w-64 flex-shrink-0">
+                <img src="/src/img/Berita1.png" alt="Team Member" class="w-full h-48 object-cover">
+                <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <h3 class="text-xl font-bold text-white">Member 8</h3>
+                    <p class="text-sm text-gray-200">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, nihil.</p>
+                </div>
+            </div>
+            <div class="team-card relative bg-white shadow-lg rounded-lg overflow-hidden w-64 flex-shrink-0">
+                <img src="/src/img/Berita1.png" alt="Team Member" class="w-full h-48 object-cover">
+                <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <h3 class="text-xl font-bold text-white">Member 9</h3>
+                    <p class="text-sm text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, laboriosam.</p>
+                </div>
+            </div>
+            <div class="team-card relative bg-white shadow-lg rounded-lg overflow-hidden w-64 flex-shrink-0">
+                <img src="/src/img/Berita1.png" alt="Team Member" class="w-full h-48 object-cover">
+                <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <h3 class="text-xl font-bold text-white">Member 10</h3>
+                    <p class="text-sm text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, amet?</p>
+                </div>
+            </div>
+            <div class="team-card relative bg-white shadow-lg rounded-lg overflow-hidden w-64 flex-shrink-0">
+                <img src="/src/img/Berita1.png" alt="Team Member" class="w-full h-48 object-cover">
+                <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <h3 class="text-xl font-bold text-white">Member 11</h3>
+                    <p class="text-sm text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, iusto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="bg-gray-200 rounded-lg mb-8 mx-4">
+        <section class="py-4 px-4">
+            <h2 class="text-left text-3xl font-bold mb-8">Our Core Values</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Lorem ipsum dolor sit amet.</h3>
+                    <p class="text-base text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet blanditiis amet, tempore rerum quisquam nam unde necessitatibus voluptas quibusdam ipsum, debitis cum ea soluta voluptatem sit repudiandae natus vitae! Architecto sapiente dignissimos expedita suscipit error dicta minus fugiat aliquid fuga quaerat, tempore officiis possimus nobis libero. Cum dolorem suscipit quos.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Lorem ipsum dolor sit amet.</h3>
+                    <p class="text-base text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quisquam eum voluptas exercitationem perspiciatis perferendis enim id! Nesciunt eos numquam sint accusamus, inventore aut unde animi placeat? Unde amet alias id incidunt voluptas assumenda saepe! Blanditiis, cum inventore architecto nesciunt aut expedita commodi quam non, reprehenderit cupiditate amet sed. Delectus.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Lorem ipsum dolor sit amet.</h3>
+                    <p class="text-base text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non recusandae dolor optio, animi aut vero a maiores consequatur earum iure nostrum! Nihil repudiandae sed facere voluptatibus facilis commodi aut eveniet saepe atque adipisci officia nesciunt necessitatibus quasi voluptatum amet laboriosam, id cum et, alias libero, ab possimus! Voluptatem, illo.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Lorem ipsum dolor sit amet.</h3>
+                    <p class="text-base text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non recusandae dolor optio, animi aut vero a maiores consequatur earum iure nostrum! Nihil repudiandae sed facere voluptatibus facilis commodi aut eveniet saepe atque adipisci officia nesciunt necessitatibus quasi voluptatum amet laboriosam, id cum et, alias libero, ab possimus! Voluptatem, illo.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Lorem ipsum dolor sit amet.</h3>
+                    <p class="text-base text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non recusandae dolor optio, animi aut vero a maiores consequatur earum iure nostrum! Nihil repudiandae sed facere voluptatibus facilis commodi aut eveniet saepe atque adipisci officia nesciunt necessitatibus quasi voluptatum amet laboriosam, id cum et, alias libero, ab possimus! Voluptatem, illo.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Lorem ipsum dolor sit amet.</h3>
+                    <p class="text-base text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non recusandae dolor optio, animi aut vero a maiores consequatur earum iure nostrum! Nihil repudiandae sed facere voluptatibus facilis commodi aut eveniet saepe atque adipisci officia nesciunt necessitatibus quasi voluptatum amet laboriosam, id cum et, alias libero, ab possimus! Voluptatem, illo.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="bg-gray-800 text-white py-4 md:py-8">
+        <div class="mx-auto px-6 flex flex-col md:flex-row justify-between md:gap-x-16 space-y-8 md:space-y-0">
+            <div class="mb-4 md:mb-0 space-y-3">
+                <h3 class="font-semibold text-xl mb-4">UPN Museum Virtual</h3>
+                <p class="text-xl">Jalan R.S. Fatmawati Raya, Pondok Labu, Cilandak, South Jakarta City,<br>Jakarta 12450</p>
+                <p class="text-xl">Email: <a href="mailto:info@museumvirtual.id" class="underline text-blue-600">info@museumvirtual.id</a></p>
+                <p class="text-xl">Telepon: (0274) 123456</p>
+            </div>
+            <div class="mb-4 md:mb-0 space-y-4">
+                <h3 class="font-semibold text-xl mb-4">Navigasi</h3>
+                <ul class="space-y-2">
+                    <li><a href="/src/main.html" class="hover:underline text-xl">Beranda</a></li>
+                    <li><a href="/src/galeri.html" class="hover:underline text-xl">Galeri</a></li>
+                    <li><a href="/src/berita.html" class="hover:underline text-xl">Berita</a></li>
+                    <li><a href="/src/about_us.html" class="hover:underline text-xl">Tentang Kami</a></li>
+                </ul>
+            </div>
+            <div class="space-y-3">
+                <h3 class="font-semibold text-xl mb-4">Ikuti Kami</h3>
+                <div class="flex space-x-4">
+                    <a href="https://wa.me/6281380461288?text=Halo%20saya%20tertarik%20dengan%20informasi%20museum" target="_blank">
+                        <img src="/src/img/whatsapp.svg" alt="WhatsApp" class="w-6 h-6">
+                    </a>
+                    <a href="https://www.instagram.com/farsbiy" target="_blank">
+                        <img src="/src/img/instagram.svg" alt="Instagram" class="w-6 h-6">
+                    </a>
+                    <a href="https://www.facebook.com/Ramaardhani2" target="_blank">
+                        <img src="/src/img/facebook.svg" alt="Facebook" class="w-6 h-6">
+                    </a>
+                    <a href="#"><img src="/src/img/telegram.svg" alt="Telegram" class="w-6 h-6"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

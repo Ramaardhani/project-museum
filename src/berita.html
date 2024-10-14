@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,11 +81,11 @@
                 <a href="/src/main.html" class="hover:underline">Beranda</a>
                 <a href="/src/galeri.html" class="hover:underline">Galeri</a>
                 <a href="/src/berita.html" class="hover:underline">Berita</a>
-                <a href="#" class="hover:underline">Tentang Kami</a>
+                <a href="/src/about_us.html" class="hover:underline">Tentang Kami</a>
             </div>
         </nav>
     </header>
-    <main class="flex flex-col items-center pt-24 px-6 md:px-12 lg:px-16 xl:px-24">
+    <main class="flex flex-col items-center pt-20 px-6 md:px-12 lg:px-16 xl:px-20">
         <div class="relative w-full shadow-2xl">
             <img src="/src/img/Frame96.png" alt="Gambar" class="w-full h-auto object-cover rounded-xl">
             <div class="absolute bottom-0 left-0 p-4 bg-gradient-to-t rounded-b-xl">
@@ -100,6 +100,42 @@
             </button>
             <h3 class="pl-1 pt-2">Lastest News</h3>
             <div id="sliderTrack" class="slider-track">
+                <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                    <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                        <p class="text-gray-600 mb-2 text-sm md:text-base">Tuli Asia</p>
+                        <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                    <img src="/src/img/Rectangle 12.png" alt="Image 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                        <p class="text-gray-600 mb-2 text-sm md:text-base">Tuli Asia</p>
+                        <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                    <img src="/src/img/Rectangle 12.png" alt="Image 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                        <p class="text-gray-600 mb-2 text-sm md:text-base">Tuli Asia</p>
+                        <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                    <img src="/src/img/Rectangle 12.png" alt="Image 4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                        <p class="text-gray-600 mb-2 text-sm md:text-base">Tuli Asia</p>
+                        <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
                 <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
                     <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -215,7 +251,7 @@
                     <li><a href="/src/main.html" class="hover:underline text-xl">Beranda</a></li>
                     <li><a href="/src/galeri.html" class="hover:underline text-xl">Galeri</a></li>
                     <li><a href="/src/berita.html" class="hover:underline text-xl">Berita</a></li>
-                    <li><a href="#" class="hover:underline text-xl">Tentang Kami</a></li>
+                    <li><a href="/src/about_us.html" class="hover:underline text-xl">Tentang Kami</a></li>
                 </ul>
             </div>
             <div class="space-y-3">
@@ -238,45 +274,29 @@
     <script>
         let currentIndex = 0;
         let autoSlideInterval;
-    
+
         function updateArrows() {
             const totalSlides = document.getElementById('sliderTrack').children.length;
-            const leftArrow = document.getElementById('leftArrow');
-            const rightArrow = document.getElementById('rightArrow');
             const slidesPerView = window.innerWidth > 768 ? 4 : 1;
-    
-            if (currentIndex <= 0) {
-                leftArrow.classList.add('disabled');
-            } else {
-                leftArrow.classList.remove('disabled');
-            }
-    
-            if (currentIndex >= totalSlides - slidesPerView) {
-                rightArrow.classList.add('disabled');
-            } else {
-                rightArrow.classList.remove('disabled');
-            }
         }
-    
+
         function slide(direction) {
             const track = document.getElementById('sliderTrack');
             const totalSlides = track.children.length;
             const slidesPerView = window.innerWidth > 768 ? 4 : 1;
             const sliderWidth = track.clientWidth / slidesPerView;
-    
+
             currentIndex += direction * slidesPerView;
-    
+
             if (currentIndex >= totalSlides) {
                 currentIndex = 0;
             }
-    
+
             if (currentIndex < 0) {
                 currentIndex = totalSlides - slidesPerView;
             }
 
             track.style.transform = `translateX(-${currentIndex * sliderWidth}px)`;
-
-            updateArrows();
         }
 
         function startAutoSlide() {
