@@ -8,7 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/style.css">
     <style>
-        /* CSS yang sudah ada */
         @media (max-width: 768px) {
             aside {
                 margin-bottom: 0;
@@ -39,7 +38,7 @@
             scroll-snap-align: start;
             flex-shrink: 0;
             background-color: white;
-            border-radius: 0.5rem; /* Mengatur sudut tumpul */
+            border-radius: 0.5rem;
             overflow: hidden;
             width: 160px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -62,7 +61,7 @@
 
         .card p {
             font-size: 0.75rem;
-            color: #6B7280; /* Warna abu-abu untuk waktu upload */
+            color: #6B7280;
         }
 
 
@@ -78,14 +77,13 @@
         }
 
         .scrollable-text {
-            max-height: 400px; /* Tentukan tinggi maksimum */
-            overflow-y: auto;  /* Aktifkan scroll vertikal */
-            margin-bottom: 0; /* Menghapus margin bawah agar tidak ada ruang tambahan */
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 0;
         }
 
     </style>
 </head>
-
 <header class="relative">
     <nav class="fixed top-0 left-0 right-0 z-10 flex justify-between items-center p-4 bg-white bg-opacity-10 backdrop-blur-md">
         <img src="/src/img/LOGO UPNVJ.png" alt="Logo" class="w-12 h-12">
@@ -97,9 +95,8 @@
         </div>
     </nav>
 </header>
-
-<body class="px-4 mt-20">
-    <div class="relative w-full shadow-2xl">
+<body class="mt-20">
+    <div class="relative w-full shadow-2xl px-4">
         <img src="/src/img/Frame96.png" alt="Gambar" class="w-full h-auto object-cover rounded-xl">
         <div class="absolute bottom-0 left-0 p-4 bg-gradient-to-t rounded-b-xl">
             <h2 class="text-white text-xl md:text-2xl font-bold">Perpisahan Magang Kampus Merdeka:</h2>
@@ -107,15 +104,12 @@
             <p class="text-white text-sm md:text-base">Desember 17, 2023</p>
         </div>
     </div>
-
     <div class="container max-w-full mb-8 mt-8 grid grid-cols-1 lg:grid-cols-4 gap-x-6">
         <main class="lg:col-span-3 p-4 shadow-md rounded-lg w-full">
             <h2 class="text-2xl font-semibold mb-4">Museum Batik Indonesia Sambut Umat Katolik Tuli Asia</h2>
         <p class="text-gray-500 mb-4">8 hours ago</p>
         <div class="text-gray-700">
             <img src="/src/img/Rectangle 12.png" alt="Gambar Pendukung" class="w-full object-cover rounded-lg mb-4">
-            
-            <!-- Tambahkan div dengan kelas scrollable -->
             <div class="scrollable-text">
                 <p class="text-lg md:text-base">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis eveniet porro et quo iusto cum voluptatibus maxime cupiditate enim ducimus incidunt distinctio possimus placeat tempore earum nam dolorem ipsum maiores odio, necessitatibus quas? Unde mollitia libero provident fugit, tempora quibusdam praesentium labore distinctio, similique quod voluptate accusamus quam ullam? Exercitationem, iusto ducimus eius quibusdam sed obcaecati accusamus quos, ab non odio aliquam debitis magnam cupiditate unde laudantium et impedit, veritatis a. Delectus sed alias, natus cumque quod iure. Ipsa cum quod recusandae eaque dolorem asperiores pariatur quam id placeat eligendi non, minus officiis iste facere. Molestiae quibusdam vero pariatur ullam, magni omnis. Nulla vero quis ipsum saepe omnis obcaecati ad. Voluptates magni sunt eos maiores a, deleniti impedit molestias ipsa molestiae reiciendis pariatur tempora blanditiis facilis, in architecto, soluta dignissimos nam laborum iste ratione nobis necessitatibus rem! Exercitationem eos iusto harum mollitia odit consectetur tempore amet. Molestias assumenda, necessitatibus cupiditate cum provident at reiciendis explicabo perferendis optio! Omnis aut eveniet eum, nulla corporis nihil atque nam vitae totam repellendus repellat assumenda iste minus quaerat quod incidunt eaque consectetur. Cumque repudiandae minus commodi sit quae eius nobis! Impedit porro culpa nam, recusandae quisquam sequi voluptate ab totam non enim, quos incidunt.
@@ -123,9 +117,6 @@
             </div>
         </div>
         </main>
-        
-
-        <!-- Berita Terkini (Sidebar) -->
         <aside class="bg-white p-4 shadow-md rounded-lg flex flex-col h-full w-full">
             <h3 class="text-xl font-semibold">Berita Terkini</h3>
             <div class="scrollable-vertical overflow-y-scroll space-y-4 flex-grow">
@@ -212,135 +203,116 @@
             </div>
         </aside>
     </div>
-
-    <!-- Latests Week -->
-<section class="mb-8">
-    <h3 class="text-xl font-semibold mb-4">Latests Week</h3>
-    <div class="horizontal-scroll">
-        <!-- Card 1 -->
-        <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
-            <img src="/src/img/Berita1.png" alt="Berita 1" class="w-full h-40 object-cover rounded-t-lg">
-            <div class="p-2">
-                <h4 class="text-sm font-semibold">Judul Berita 1</h4>
-                <p class="text-xs text-gray-500">Uploaded 2 hours ago</p>
+    <section class="px-4 mb-8">
+        <h3 class="text-xl font-semibold mb-4">Latests Week</h3>
+        <div class="horizontal-scroll">
+            <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
+                <img src="/src/img/Berita1.png" alt="Berita 1" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-2">
+                    <h4 class="text-sm font-semibold">Judul Berita 1</h4>
+                    <p class="text-xs text-gray-500">Uploaded 2 hours ago</p>
+                </div>
+            </div>
+            <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
+                <img src="/src/img/Frame96.png" alt="Berita 2" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-2">
+                    <h4 class="text-sm font-semibold">Judul Berita 2</h4>
+                    <p class="text-xs text-gray-500">Uploaded 5 hours ago</p>
+                </div>
+            </div>
+            <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
+                <img src="/src/img/Frame97.png" alt="Berita 3" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-2">
+                    <h4 class="text-sm font-semibold">Judul Berita 3</h4>
+                    <p class="text-xs text-gray-500">Uploaded 1 day ago</p>
+                </div>
+            </div>
+            <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
+                <img src="/src/img/Rectangle 12.png" alt="Berita 4" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-2">
+                    <h4 class="text-sm font-semibold">Judul Berita 4</h4>
+                    <p class="text-xs text-gray-500">Uploaded 3 days ago</p>
+                </div>
+            </div>
+            <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
+                <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-2">
+                    <h4 class="text-sm font-semibold">Judul Berita 5</h4>
+                    <p class="text-xs text-gray-500">Uploaded 4 days ago</p>
+                </div>
+            </div>
+            <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
+                <img src="/src/img/Berita1.png" alt="Berita 1" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-2">
+                    <h4 class="text-sm font-semibold">Judul Berita 1</h4>
+                    <p class="text-xs text-gray-500">Uploaded 2 hours ago</p>
+                </div>
+            </div>
+            <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
+                <img src="/src/img/Frame96.png" alt="Berita 2" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-2">
+                    <h4 class="text-sm font-semibold">Judul Berita 2</h4>
+                    <p class="text-xs text-gray-500">Uploaded 5 hours ago</p>
+                </div>
+            </div>
+            <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
+                <img src="/src/img/Frame97.png" alt="Berita 3" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-2">
+                    <h4 class="text-sm font-semibold">Judul Berita 3</h4>
+                    <p class="text-xs text-gray-500">Uploaded 1 day ago</p>
+                </div>
+            </div>
+            <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
+                <img src="/src/img/Rectangle 12.png" alt="Berita 4" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-2">
+                    <h4 class="text-sm font-semibold">Judul Berita 4</h4>
+                    <p class="text-xs text-gray-500">Uploaded 3 days ago</p>
+                </div>
+            </div>
+            <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
+                <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-2">
+                    <h4 class="text-sm font-semibold">Judul Berita 5</h4>
+                    <p class="text-xs text-gray-500">Uploaded 4 days ago</p>
+                </div>
+            </div>
+            <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
+                <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-2">
+                    <h4 class="text-sm font-semibold">Judul Berita 5</h4>
+                    <p class="text-xs text-gray-500">Uploaded 4 days ago</p>
+                </div>
+            </div>
+            <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
+                <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-2">
+                    <h4 class="text-sm font-semibold">Judul Berita 5</h4>
+                    <p class="text-xs text-gray-500">Uploaded 4 days ago</p>
+                </div>
+            </div>
+            <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
+                <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-2">
+                    <h4 class="text-sm font-semibold">Judul Berita 5</h4>
+                    <p class="text-xs text-gray-500">Uploaded 4 days ago</p>
+                </div>
+            </div>
+            <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
+                <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-2">
+                    <h4 class="text-sm font-semibold">Judul Berita 5</h4>
+                    <p class="text-xs text-gray-500">Uploaded 4 days ago</p>
+                </div>
+            </div>
+            <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
+                <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-2">
+                    <h4 class="text-sm font-semibold">Judul Berita 5</h4>
+                    <p class="text-xs text-gray-500">Uploaded 4 days ago</p>
+                </div>
             </div>
         </div>
-        <!-- Card 2 -->
-        <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
-            <img src="/src/img/Frame96.png" alt="Berita 2" class="w-full h-40 object-cover rounded-t-lg">
-            <div class="p-2">
-                <h4 class="text-sm font-semibold">Judul Berita 2</h4>
-                <p class="text-xs text-gray-500">Uploaded 5 hours ago</p>
-            </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
-            <img src="/src/img/Frame97.png" alt="Berita 3" class="w-full h-40 object-cover rounded-t-lg">
-            <div class="p-2">
-                <h4 class="text-sm font-semibold">Judul Berita 3</h4>
-                <p class="text-xs text-gray-500">Uploaded 1 day ago</p>
-            </div>
-        </div>
-        <!-- Card 4 -->
-        <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
-            <img src="/src/img/Rectangle 12.png" alt="Berita 4" class="w-full h-40 object-cover rounded-t-lg">
-            <div class="p-2">
-                <h4 class="text-sm font-semibold">Judul Berita 4</h4>
-                <p class="text-xs text-gray-500">Uploaded 3 days ago</p>
-            </div>
-        </div>
-        <!-- Card 5 -->
-        <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
-            <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-t-lg">
-            <div class="p-2">
-                <h4 class="text-sm font-semibold">Judul Berita 5</h4>
-                <p class="text-xs text-gray-500">Uploaded 4 days ago</p>
-            </div>
-        </div>
-        <!-- Card 6 -->
-        <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
-            <img src="/src/img/Berita1.png" alt="Berita 1" class="w-full h-40 object-cover rounded-t-lg">
-            <div class="p-2">
-                <h4 class="text-sm font-semibold">Judul Berita 1</h4>
-                <p class="text-xs text-gray-500">Uploaded 2 hours ago</p>
-            </div>
-        </div>
-        <!-- Card 7 -->
-        <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
-            <img src="/src/img/Frame96.png" alt="Berita 2" class="w-full h-40 object-cover rounded-t-lg">
-            <div class="p-2">
-                <h4 class="text-sm font-semibold">Judul Berita 2</h4>
-                <p class="text-xs text-gray-500">Uploaded 5 hours ago</p>
-            </div>
-        </div>
-        <!-- Card 8 -->
-        <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
-            <img src="/src/img/Frame97.png" alt="Berita 3" class="w-full h-40 object-cover rounded-t-lg">
-            <div class="p-2">
-                <h4 class="text-sm font-semibold">Judul Berita 3</h4>
-                <p class="text-xs text-gray-500">Uploaded 1 day ago</p>
-            </div>
-        </div>
-        <!-- Card 9 -->
-        <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
-            <img src="/src/img/Rectangle 12.png" alt="Berita 4" class="w-full h-40 object-cover rounded-t-lg">
-            <div class="p-2">
-                <h4 class="text-sm font-semibold">Judul Berita 4</h4>
-                <p class="text-xs text-gray-500">Uploaded 3 days ago</p>
-            </div>
-        </div>
-        <!-- Card 10 -->
-        <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
-            <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-t-lg">
-            <div class="p-2">
-                <h4 class="text-sm font-semibold">Judul Berita 5</h4>
-                <p class="text-xs text-gray-500">Uploaded 4 days ago</p>
-            </div>
-        </div>
-        <!-- Card 11 -->
-        <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
-            <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-t-lg">
-            <div class="p-2">
-                <h4 class="text-sm font-semibold">Judul Berita 5</h4>
-                <p class="text-xs text-gray-500">Uploaded 4 days ago</p>
-            </div>
-        </div>
-        <!-- Card 12 -->
-        <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
-            <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-t-lg">
-            <div class="p-2">
-                <h4 class="text-sm font-semibold">Judul Berita 5</h4>
-                <p class="text-xs text-gray-500">Uploaded 4 days ago</p>
-            </div>
-        </div>
-        <!-- Card 13 -->
-        <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
-            <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-t-lg">
-            <div class="p-2">
-                <h4 class="text-sm font-semibold">Judul Berita 5</h4>
-                <p class="text-xs text-gray-500">Uploaded 4 days ago</p>
-            </div>
-        </div>
-        <!-- Card 14 -->
-        <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
-            <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-t-lg">
-            <div class="p-2">
-                <h4 class="text-sm font-semibold">Judul Berita 5</h4>
-                <p class="text-xs text-gray-500">Uploaded 4 days ago</p>
-            </div>
-        </div>
-        <!-- Card 15 -->
-        <div class="card bg-white shadow-lg rounded-lg w-40 flex-shrink-0 mr-4">
-            <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-t-lg">
-            <div class="p-2">
-                <h4 class="text-sm font-semibold">Judul Berita 5</h4>
-                <p class="text-xs text-gray-500">Uploaded 4 days ago</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
+    </section>
     <footer class="bg-gray-800 text-white py-4 md:py-8">
         <div class="mx-auto px-6 flex flex-col md:flex-row justify-between md:gap-x-16 space-y-8 md:space-y-0">
             <div class="mb-4 md:mb-0 space-y-3">
@@ -351,7 +323,7 @@
             </div>
             <div class="mb-4 md:mb-0 space-y-4">
                 <h3 class="font-semibold text-xl mb-4">Navigasi</h3>
-                <ul class="space-y-2">
+                <ul class="space-y-2"> 
                     <li><a href="/src/main.html" class="hover:underline text-xl">Beranda</a></li>
                     <li><a href="/src/galeri.html" class="hover:underline text-xl">Galeri</a></li>
                     <li><a href="/src/berita.html" class="hover:underline text-xl">Berita</a></li>
@@ -363,14 +335,17 @@
                 <div class="flex space-x-4">
                     <a href="https://wa.me/6281380461288?text=Halo%20saya%20tertarik%20dengan%20informasi%20museum" target="_blank">
                         <img src="/src/img/whatsapp.svg" alt="WhatsApp" class="w-6 h-6">
-                    </a>
+                    </a>                    
                     <a href="https://www.instagram.com/farsbiy" target="_blank">
                         <img src="/src/img/instagram.svg" alt="Instagram" class="w-6 h-6">
+                    </a>                    
+                    <a href="https://www.facebook.com/Ramaardhani2" target="_blank">
+                        <img src="/src/img/facebook.svg" alt="Facebook" class="w-6 h-6">
                     </a>
+                    <a href="#"><img src="/src/img/telegram.svg" alt="Telegram" class="w-6 h-6"></a>
                 </div>
             </div>
         </div>
     </footer>
 </body>
-
 </html>
