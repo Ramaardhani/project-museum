@@ -52,6 +52,47 @@
         .underline-container button {
             margin-left: auto;
         }
+
+        .slider-card {
+            min-width: 25%;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        .slider-card img {
+            width: 100%;
+            height: 12rem; /* Mengatur tinggi gambar */
+            object-fit: cover;
+        }
+
+        .slider-card h2 {
+            font-size: 1.25rem; /* Ukuran font h2 */
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .slider-card p {
+            font-size: 0.875rem; /* Ukuran font paragraf */
+            color: #6B7280; /* Warna teks */
+        }
+
+        /* Mobile view: Scroll vertikal di tempat */
+        @media (max-width: 768px) {
+            .galeri-container {
+                overflow-y: auto; /* Aktifkan scroll vertikal */
+                max-height: 48rem; /* Batasi tinggi galeri */
+            }
+
+            .galeri-grid {
+                flex-direction: column; /* Stack item secara vertikal */
+                gap: 1rem; /* Jarak antar item vertikal */
+            }
+
+            .slider-card {
+                width: 98%; /* Kartu mengikuti lebar penuh layar */
+            }
+        }
+
     </style>
 </head>
 <body class="font-sans">
@@ -133,20 +174,151 @@
                 <img src="/src/img/Rectangle 12.png" alt="Museum Interior" class="w-full h-full object-cover object-center">
             </div>
         </section>
-        <section class="my-8 md:my-16 shadow-2xl">
+        <section class="my-8 md:my-16">
             <div class="underline-container">
-                <h2 class="text-2xl md:text-3xl font-bold">Galery</h2>
+                <h2 class="text-2xl md:text-3xl font-bold">Galery Project</h2>
                 <button class="flex items-center space-x-2 font-semibold text-sm md:text-base">
-                    <span>VIEW ALL GALERY</span>
+                    <span>VIEW ALL GALLERY PROJECT</span>
                     <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                     </svg>
                 </button>
             </div>
-            <div class="text-center text-xl md:text-3xl font-bold pt-6">
-                DISINI DI ISI FOTO FOTO DOKUMENTASI KITA<br>
-                SEMUA JADI DI KOSONGKAN DAHULU KARENA<br>
-                MAU DI TARO ABSTRAK AJA
+            <div class="galeri-container overflow-x-auto">
+                <div class="galeri-grid flex space-x-2 my-1">
+                    <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                        <a href="">
+                            <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover">
+                        </a>
+                        <div class="p-2">
+                            <h2 class="text-xl md:text-2xl font-bold my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, praesentium.</h2>
+                            <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                            <p class="text-gray-600 my-2 text-sm md:text-base">Tuli Asia</p>
+                            <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                        <a href="">
+                            <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover">
+                        </a>                    
+                        <div class="p-2">
+                            <h2 class="text-xl md:text-2xl font-bold my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, error.</h2>
+                            <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                            <p class="text-gray-600 my-2 text-sm md:text-base">Tuli Asia</p>
+                            <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                        <a href="">
+                            <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover">
+                        </a>                    
+                        <div class="p-2">
+                            <h2 class="text-xl md:text-2xl font-bold my-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, id?</h2>
+                            <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                            <p class="text-gray-600 my-2 text-sm md:text-base">Tuli Asia</p>
+                            <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                        <a href="">
+                            <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover">
+                        </a>                    
+                        <div class="p-2">
+                            <h2 class="text-xl md:text-2xl font-bold my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, sequi.</h2>
+                            <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                            <p class="text-gray-600 my-2 text-sm md:text-base">Tuli Asia</p>
+                            <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                        <a href="">
+                            <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover">
+                        </a>                    
+                        <div class="p-2">
+                            <h2 class="text-xl md:text-2xl font-bold my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quia.</h2>
+                            <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                            <p class="text-gray-600 my-2 text-sm md:text-base">Tuli Asia</p>
+                            <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                        <a href="">
+                            <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover">
+                        </a>                    
+                        <div class="p-2">
+                            <h2 class="text-xl md:text-2xl font-bold my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, vel.</h2>
+                            <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                            <p class="text-gray-600 my-2 text-sm md:text-base">Tuli Asia</p>
+                            <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                        <a href="">
+                            <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover">
+                        </a>                    
+                        <div class="p-2">
+                            <h2 class="text-xl md:text-2xl font-bold my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, soluta.</h2>
+                            <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                            <p class="text-gray-600 my-2 text-sm md:text-base">Tuli Asia</p>
+                            <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                        <a href="">
+                            <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover">
+                        </a>                    
+                        <div class="p-2">
+                            <h2 class="text-xl md:text-2xl font-bold my-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis, mollitia.</h2>
+                            <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                            <p class="text-gray-600 my-2 text-sm md:text-base">Tuli Asia</p>
+                            <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                        <a href="">
+                            <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover">
+                        </a>                    
+                        <div class="p-2">
+                            <h2 class="text-xl md:text-2xl font-bold my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, ratione.</h2>
+                            <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                            <p class="text-gray-600 my-2 text-sm md:text-base">Tuli Asia</p>
+                            <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                        <a href="">
+                            <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover">
+                        </a>                    
+                        <div class="p-2">
+                            <h2 class="text-xl md:text-2xl font-bold my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, odio?</h2>
+                            <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                            <p class="text-gray-600 my-2 text-sm md:text-base">Tuli Asia</p>
+                            <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                        <a href="">
+                            <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover">
+                        </a>                    
+                        <div class="p-2">
+                            <h2 class="text-xl md:text-2xl font-bold my-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, odio.</h2>
+                            <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                            <p class="text-gray-600 my-2 text-sm md:text-base">Tuli Asia</p>
+                            <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="slider-card bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+                        <a href="">
+                            <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover">
+                        </a>                    
+                        <div class="p-2">
+                            <h2 class="text-xl md:text-2xl font-bold my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, aliquid.</h2>
+                            <p class="text-gray-600 text-sm md:text-base">Sambut Umat Katolik</p>
+                            <p class="text-gray-600 my-2 text-sm md:text-base">Tuli Asia</p>
+                            <p class="text-gray-500 text-xs md:text-sm">8 hours ago</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
