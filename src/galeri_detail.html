@@ -3,99 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Digital Archive</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Digital Archive Detail</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
-<body class="bg-green-950 min-h-screen text-white">
-    <!-- Navbar -->
-    <header class="fixed top-0 left-0 right-0 z-10 flex justify-between items-center px-8 py-4 bg-green-950 bg-opacity-80 backdrop-blur-md">
-        <img src="img/LOGO UPNVJ.png" alt="Logo UPNVJ" class="w-12 h-12">
-        <nav class="flex space-x-8">
-            <a href="#" class="hover:text-gray-300">Beranda</a>
-            <a href="#" class="hover:text-gray-300">Galeri</a>
-            <a href="#" class="hover:text-gray-300">Berita</a>
-            <a href="#" class="hover:text-gray-300">Tentang Kami</a>
+<body class="font-sans bg-seaweed-200">
+    <header class="relative">
+        <nav class="fixed top-0 left-0 right-0 z-10 flex justify-between items-center p-4 bg-green-950 bg-opacity-90 backdrop-blur-md">
+            <img src="/src/img/LOGO UPNVJ.png" alt="Logo" class="w-12 h-12">
+            <div class="flex space-x-4 text-white text-lg">
+                <a href="/src/main.html" class="hover:underline">Beranda</a>
+                <a href="/src/galeri.html" class="hover:underline">Galeri</a>
+                <a href="/src/berita.html" class="hover:underline">Berita</a>
+                <a href="/src/about_us.html" class="hover:underline">Tentang Kami</a>
+            </div>
         </nav>
     </header>
-
-    <!-- Main Content -->
-    <main class="max-w-[98%] mx-auto pt-24">
-        <div class="flex gap-8">
-            <!-- Left side - Image -->
-            <div class="w-auto md:w-auto">
-                <img src="img/Rectangle 32.png" alt="Monumen Palagan" class="w-full h-auto rounded-lg object-cover">
+    <main class="mx-auto mb-4 pt-20">
+        <section class="flex flex-col md:flex-row md:space-y-0">
+            <div class="w-full md:w-1/3 md:pl-0">
+                <img src="img/Rectangle 32.png" alt="Monument" class="w-full h-full object-cover">
             </div>
-
-            <!-- Right side - Content -->
-            <div class="w-3/4">
-                <div class="mb-8">
-                    <h2 class="text-lg font-bold mb-2">ARSIP DIGITAL</h2>
-                    <h1 class="text-5xl font-bold mb-6">Pertempuran Ambarawa: Sejarah, Tokoh, Budaya</h1>
-                    <p class="text-gray-300 mb-6">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id nulla arcu. Integer ipsum est, volutpat in dictum in, accumsan non libero. Phasellus cursus aliquet consequat. Curabitur ultrices odio turpis, quis lobortis odio porttitor consectetur. Ut id magna ut sem condimentum bibendum. Suspendisse vitae ante velit. Nulla eget eros dui. Suspendisse potenti. Donec vel sodales mauris. Morbi sed metus nisi.
-                    </p>
-                    <p class="text-gray-300">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id nulla arcu. Integer ipsum est, volutpat in dictum in, accumsan non libero. Phasellus cursus aliquet consequat. Curabitur ultrices odio turpis, quis lobortis odio porttitor consectetur. Ut id magna ut sem condimentum bibendum. Suspendisse vitae ante velit. Nulla eget eros dui. Suspendisse potenti. Donec vel sodales mauris. Morbi sed metus nisi.
+            <div class="w-full bg-black text-white p-8">
+                <div class="mb-6">
+                    <h2 class="text-sm font-semibold uppercase">Arsip Digital</h2>
+                    <h1 class="text-3xl font-bold mt-2">Pertempuran Ambarawa: Sejarah, Tokoh, Budaya</h1>
+                    <p class="mt-4 text-gray-300">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id nulla arcu. Integer ipsum est, volutpat in dictum in, accumsan non libero. Phasellus cursus aliquet consequat. Curabitur ultrices odio turpis, quis lobortis odio porttitor consectetur. Ut id magna ut sem condimentum bibendum. Suspendisse vitae ante velit. Nulla eget eros dui.
+                        Suspendisse potenti. Donec vel sodales mauris. Morbi sed metus nisi. In fermentum vulputate purus, non pharetra purus gravida ac. Duis eget hendrerit nunc. Praesent justo elit, hendrerit vel orci et, blandit rutrum nisi. Ut imperdiet tellus vitae tellus commodo, at interdum felis feugiat. Sed venenatis sem magna, vitae iaculis est sagittis id. Phasellus tristique tortor nec felis maximus, nec pharetra velit consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id nulla arcu. Integer ipsum est, volutpat in dictum in, accumsan non libero. Phasellus cursus aliquet consequat. Curabitur ultrices odio turpis, quis lobortis odio porttitor consectetur. Ut id magna ut sem condimentum bibendum. Suspendisse vitae ante velit. Nulla eget eros dui.
+                        Suspendisse potenti. Donec vel sodales mauris. Morbi sed metus nisi. In fermentum vulputate purus, non pharetra purus gravida ac. Duis eget hendrerit nunc. Praesent justo elit, hendrerit vel orci et, blandit rutrum nisi. Ut imperdiet tellus vitae tellus commodo, at interdum felis feugiat. Sed venenatis sem magna, vitae iaculis est sagittis id. Phasellus tristique tortor nec felis maximus, nec pharetra velit consequat.
                     </p>
                 </div>
-
-                <!-- Gallery Cards -->
-                <div class="mt-12">
-                    <div class="flex space-x-4 overflow-x-auto pb-4">
-                        <!-- Card 1 -->
-                        <div class="flex-none w-64 bg-green-900 rounded-lg p-4">
-                            <img src="img/Galeri_CM.png" alt="Jendral Sudirman" class="w-full h-64 object-cover rounded-lg mb-4">
-                            <h3 class="text-xl font-semibold text-center mb-2">Pahlawan</h3>
-                            <p class="text-center">Jendral Sudirman</p>
-                        </div>
-
-                        <!-- Card 2 -->
-                        <div class="flex-none w-64 bg-green-900 rounded-lg p-4">
-                            <img src="img/Galeri_CM.png" alt="Jendral Sudirman" class="w-full h-64 object-cover rounded-lg mb-4">
-                            <h3 class="text-xl font-semibold text-center mb-2">Senjata Tradisional</h3>
-                            <p class="text-center">Jendral Sudirman</p>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div class="flex-none w-64 bg-green-900 rounded-lg p-4">
-                            <img src="img/Galeri_CM.png" alt="Jendral Sudirman" class="w-full h-64 object-cover rounded-lg mb-4">
-                            <h3 class="text-xl font-semibold text-center mb-2">Budaya Daerah</h3>
-                            <p class="text-center">Jendral Sudirman</p>
-                        </div>
-                        <!-- Card 4 -->
-                        <div class="flex-none w-64 bg-green-900 rounded-lg p-4">
-                            <img src="img/Galeri_CM.png" alt="Jendral Sudirman" class="w-full h-64 object-cover rounded-lg mb-4">
-                            <h3 class="text-xl font-semibold text-center mb-2">Pahlawan</h3>
-                            <p class="text-center">Jendral Sudirman</p>
-                        </div>
-
-                        <!-- Card 5 -->
-                        <div class="flex-none w-64 bg-green-900 rounded-lg p-4">
-                            <img src="img/Galeri_CM.png" alt="Jendral Sudirman" class="w-full h-64 object-cover rounded-lg mb-4">
-                            <h3 class="text-xl font-semibold text-center mb-2">Senjata Tradisional</h3>
-                            <p class="text-center">Jendral Sudirman</p>
-                        </div>
-
-                        <!-- Card 6 -->
-                        <div class="flex-none w-64 bg-green-900 rounded-lg p-4">
-                            <img src="img/Galeri_CM.png" alt="Jendral Sudirman" class="w-full h-64 object-cover rounded-lg mb-4">
-                            <h3 class="text-xl font-semibold text-center mb-2">Budaya Daerah</h3>
-                            <p class="text-center">Jendral Sudirman</p>
-                        </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-[#172812] text-white rounded-lg flex flex-col items-center">
+                        <img src="img/Galeri_CM.png" alt="Pahlawan" class="rounded-md w-full h-64 object-cover">
+                        <span class="font-semibold mt-2">Pahlawan</span>
+                        <span class="text-green-300">Jendral Sudirman</span>
+                    </div>
+                    <div class="bg-[#172812] text-green-300 rounded-lg flex flex-col items-center">
+                        <img src="img/Galeri_CM.png" alt="Senjata Tradisional" class="rounded-md w-full h-64 object-cover">
+                        <span class="font-semibold mt-2">Senjata Tradisional</span>
+                        <span class="text-green-300">Jendral Sudirman</span>
+                    </div>
+                    <div class="bg-[#172812] text-green-300 rounded-lg flex flex-col items-center">
+                        <img src="img/Galeri_CM.png" alt="Budaya Daerah" class="rounded-md w-full h-64 object-cover">
+                        <span class="font-semibold mt-2">Budaya Daerah</span>
+                        <span class="text-green-300">Jendral Sudirman</span>
+                    </div>
+                    <div class="bg-[#172812] text-green-300 rounded-lg flex flex-col items-center">
+                        <img src="img/Galeri_CM.png" alt="Pahlawan" class="rounded-md w-full h-64 object-cover">
+                        <span class="font-semibold mt-2">Pahlawan</span>
+                        <span class="text-green-300">Jendral Sudirman</span>
+                    </div>
+                    <div class="bg-[#172812] text-green-300 rounded-lg flex flex-col items-center">
+                        <img src="img/Galeri_CM.png" alt="Senjata Tradisional" class="rounded-md w-full h-64 object-cover">
+                        <span class="font-semibold mt-2">Senjata Tradisional</span>
+                        <span class="text-green-300">Jendral Sudirman</span>
+                    </div>
+                    <div class="bg-[#172812] text-green-300 rounded-lg flex flex-col items-center">
+                        <img src="img/Galeri_CM.png" alt="Budaya Daerah" class="rounded-md w-full h-64 object-cover">
+                        <span class="font-semibold mt-2">Budaya Daerah</span>
+                        <span class="text-green-300">Jendral Sudirman</span>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="flex justify-between py-8 px-4 mt-8">
-            <a href="#" class="text-green-400 hover:underline flex items-center">
-                &larr; SEBELUMNYA
+        </section>
+        <section class="flex justify-between items-center mt-4 mx-8">
+            <a href="#" class="text-black-700 flex items-center space-x-2 hover:underline">
+                <span>←</span>
+                <span>Sebelumnya</span>
             </a>
-            <a href="#" class="text-green-400 hover:underline flex items-center">
-                SELANJUTNYA &rarr;
+            <a href="#" class="text-black-700 flex items-center space-x-2 hover:underline">
+                <span>Selanjutnya</span>
+                <span>→</span>
             </a>
-        </div>
+        </section>
     </main>
 </body>
 </html>
