@@ -7,269 +7,436 @@
     <title>Berita Museum Batik</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        @media (max-width: 768px) {
-            aside {
-                margin-bottom: 0;
-                width: 100%;
-                height: 100%;
-            }
-
-            .news-item img {
-                width: 24px;
-                height: 24px;
-            }
+        .hidden {
+            display: none;
         }
 
-        @media (min-width: 769px) {
-            aside {
-                width: 100%;
-                height: auto;
-            }
-        }
-
-        .horizontal-scroll {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-        }
-
-        .horizontal-scroll .card {
-            scroll-snap-align: start;
-            flex-shrink: 0;
-            background-color: white;
-            border-radius: 0.5rem;
+        .slider-container {
+            position: relative;
             overflow: hidden;
-            width: 160px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .horizontal-scroll .card img {
-            flex-shrink: 0;
-            height: 160px;
-            object-cover: cover;
-            width: 100%;
-            border-top-left-radius: 0.5rem;
-            border-top-right-radius: 0.5rem;
+        .slider-container h3 {
+        font-weight: 600;
+        font-size: 27px;
         }
 
-        .card h4 {
-            margin-top: 0.5rem;
-            font-size: 0.875rem;
-            font-weight: 600;
+        .slider-track {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
         }
 
-        .card p {
-            font-size: 0.75rem;
-            color: #6B7280;
+        .slider-card {
+            min-width: 25%;
+            padding: 1rem;
+            box-sizing: border-box;
         }
 
-
-        .horizontal-scroll img {
-            scroll-snap-align: start;
-            flex-shrink: 0;
-            margin-right: 1rem;
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: black;
+            background-color: transparent;
+            border: none;
+            padding: 0.5rem;
+            font-size: 2rem;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
         }
 
-        .scrollable-vertical {
-            max-height: 1000px;
-            overflow-y: scroll;
+        .slider-arrow.left {
+            right: 40px;
+            top: 28px;
         }
 
-        .scrollable-text {
-            max-height: 400px;
-            overflow-y: auto;
-            margin-bottom: 0;
+        .slider-arrow.right {
+            right: 10px;
+            top: 28px;
         }
+
+        .slider-arrow.disabled {
+            color: gray;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+            .slider-card {
+                min-width: 100%;
+            }
+
+            .slider-arrow {
+                display: none;
+            }
+
+            .slider-container {
+                overflow-x: scroll;
+            }
+        }
+
 
     </style>
 </head>
 <header class="relative">
-    <nav class="fixed top-0 left-0 right-0 z-10 flex justify-between items-center p-4 bg-green-950 bg-opacity-90 backdrop-blur-md">
+    <nav class="fixed top-0 left-0 right-0 z-20 flex justify-between items-center p-4 bg-[#172812] bg-opacity-90 backdrop-blur-md">
         <div class="flex items-center">
             <img src="/src/img/LOGO UPNVJ.png" alt="Logo" class="w-12 h-12">
-            <div class="ml-4 text-white">
+            <div class="ml-4 text-[#FBFCFE]">
                 <h1 class="text-lg font-bold">Museum Bela Negara</h1>
                 <p class="text-sm">UPN "Veteran" Jakarta</p>
             </div>
         </div>
-        <div class="flex space-x-4 text-white text-lg">
+        <button id="hamburger" class="md:hidden text-[#FBFCFE] focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+        <div id="menu" class="hidden md:flex space-x-4 text-[#FBFCFE] text-lg">
             <a href="/src/main.html" class="hover:underline">Beranda</a>
             <a href="/src/galeri.html" class="hover:underline">Galeri</a>
             <a href="/src/berita.html" class="hover:underline">Berita</a>
             <a href="/src/about_us.html" class="hover:underline">Tentang Kami</a>
         </div>
     </nav>
+    <div id="mobileMenu" class="hidden fixed top-20 left-0 right-0 bg-[#172812] bg-opacity-90 backdrop-blur-md text-[#FBFCFE] text-lg px-4 py-4 space-y-4 z-20 box-border">
+        <a href="/src/main.html" class="block hover:underline">Beranda</a>
+        <a href="/src/galeri.html" class="block hover:underline">Galeri</a>
+        <a href="/src/berita.html" class="block hover:underline">Berita</a>
+        <a href="/src/about_us.html" class="block hover:underline">Tentang Kami</a>
+    </div>
 </header>
 
-<body class="mt-24">
-    <div class="relative w-full px-4">
-        <img src="/src/img/Frame96.png" alt="Gambar" class="w-full h-auto object-cover rounded-xl">
-        <div class="absolute bottom-0 left-0 pl-8 pb-4 bg-gradient-to-t rounded-b-xl">
-            <h2 class="text-white text-xl md:text-2xl font-bold">Perpisahan Magang Kampus Merdeka:</h2>
-            <h2 class="text-white text-lg md:text-xl font-semibold">Pemahaman Holistik Dalam Dunia Pemuseuman</h2>
-            <p class="text-white text-sm md:text-base">Desember 17, 2023</p>
-        </div>
-    </div>
-    <div class="container max-w-full mb-8 mt-8">
-        <main class="p-4 rounded-lg w-full">
-            <h2 class="text-2xl font-semibold mb-4">Museum Batik Indonesia Sambut Umat Katolik Tuli Asia</h2>
-        <p class="text-gray-500 mb-4">8 hours ago</p>
-        <div class="text-gray-700">
-            <img src="/src/img/Rectangle 12.png" alt="Gambar Pendukung" class="w-full items-center object-cover rounded-lg mb-4">
-            <div class="scrollable-text">
-                <p class="text-lg md:text-base">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis eveniet porro et quo iusto cum voluptatibus maxime cupiditate enim ducimus incidunt distinctio possimus placeat tempore earum nam dolorem ipsum maiores odio, necessitatibus quas? Unde mollitia libero provident fugit, tempora quibusdam praesentium labore distinctio, similique quod voluptate accusamus quam ullam? Exercitationem, iusto ducimus eius quibusdam sed obcaecati accusamus quos, ab non odio aliquam debitis magnam cupiditate unde laudantium et impedit, veritatis a. Delectus sed alias, natus cumque quod iure. Ipsa cum quod recusandae eaque dolorem asperiores pariatur quam id placeat eligendi non, minus officiis iste facere. Molestiae quibusdam vero pariatur ullam, magni omnis. Nulla vero quis ipsum saepe omnis obcaecati ad. Voluptates magni sunt eos maiores a, deleniti impedit molestias ipsa molestiae reiciendis pariatur tempora blanditiis facilis, in architecto, soluta dignissimos nam laborum iste ratione nobis necessitatibus rem! Exercitationem eos iusto harum mollitia odit consectetur tempore amet. Molestias assumenda, necessitatibus cupiditate cum provident at reiciendis explicabo perferendis optio! Omnis aut eveniet eum, nulla corporis nihil atque nam vitae totam repellendus repellat assumenda iste minus quaerat quod incidunt eaque consectetur. Cumque repudiandae minus commodi sit quae eius nobis! Impedit porro culpa nam, recusandae quisquam sequi voluptate ab totam non enim, quos incidunt.
-                </p>
-            </div>
-        </div>
-        </main>
-    </div>
-    <section class="px-4 mb-8">
-        <h3 class="text-xl font-semibold mb-4">Latests Week</h3>
-        <div class="bg-[#151512] py-4 px-4 rounded-lg">
-            <div class="horizontal-scroll">
-                <div class="rounded-lg w-40 flex-shrink-0 mr-4">
-                    <img src="/src/img/Berita1.png" alt="Berita 1" class="w-full h-40 object-cover rounded-lg">
-                    <div class="p-2">
-                        <h4 class="text-sm font-semibold text-[#C5E1B5]">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                        <p class="text-xs text-[#C5E1B5] pt-2">Uploaded 2 hours ago</p>
-                    </div>
+<body class="font-poppins bg-[#FBFCFE]">
+    <main class="max-w-full mx-auto pt-16">
+        <div class="container max-w-full mb-8 mt-8 p-6  rounded-lg">
+            <h2 class="text-4xl font-semibold mb-2 text-[#172812]">Kemhan Ungkap Kompleksnya Ancaman, </h2>
+                <h2 class="text-4xl font-semibold text-[#172812]">Harap Kesadaran Bela Negara Tumbuh</h2>
+                <div class="flex items-center justify-start  space-x-4 py-8">
+                    <span class="bg-gray-200 text-[#272742] font-bold px-4 py-1 rounded-full text-sm">Arsip Digital</span>
+                    <p class="text-sm text-[#292828]">23 Oktober, 2024</p>
                 </div>
-                <div class="rounded-lg w-40 flex-shrink-0 mr-4">
-                    <img src="/src/img/Frame96.png" alt="Berita 2" class="w-full h-40 object-cover rounded-lg">
-                    <div class="p-2">
-                        <h4 class="text-sm font-semibold text-[#C5E1B5]">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h4>
-                        <p class="text-xs text-[#C5E1B5] pt-2">Uploaded 5 hours ago</p>
-                    </div>
-                </div>
-                <div class="rounded-lg w-40 flex-shrink-0 mr-4">
-                    <img src="/src/img/Frame97.png" alt="Berita 3" class="w-full h-40 object-cover rounded-lg">
-                    <div class="p-2">
-                        <h4 class="text-sm font-semibold text-[#C5E1B5]">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                        <p class="text-xs  text-[#C5E1B5] pt-2">Uploaded 1 day ago</p>
-                    </div>
-                </div>
-                <div class="rounded-lg w-40 flex-shrink-0 mr-4">
-                    <img src="/src/img/Rectangle 12.png" alt="Berita 4" class="w-full h-40 object-cover rounded-lg">
-                    <div class="p-2">
-                        <h4 class="text-sm font-semibold text-[#C5E1B5]">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                        <p class="text-xs text-[#C5E1B5] pt-2">Uploaded 3 days ago</p>
-                    </div>
-                </div>
-                <div class="rounded-lg w-40 flex-shrink-0 mr-4">
-                    <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-lg">
-                    <div class="p-2">
-                        <h4 class="text-sm font-semibold text-[#C5E1B5]">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                        <p class="text-xs text-[#C5E1B5] pt-2">Uploaded 4 days ago</p>
-                    </div>
-                </div>
-                <div class="rounded-lg w-40 flex-shrink-0 mr-4">
-                    <img src="/src/img/Berita1.png" alt="Berita 1" class="w-full h-40 object-cover rounded-lg">
-                    <div class="p-2">
-                        <h4 class="text-sm font-semibold text-[#C5E1B5]">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h4>
-                        <p class="text-xs text-[#C5E1B5] pt-2">Uploaded 2 hours ago</p>
-                    </div>
-                </div>
-                <div class="rounded-lg w-40 flex-shrink-0 mr-4">
-                    <img src="/src/img/Frame96.png" alt="Berita 2" class="w-full h-40 object-cover rounded-lg">
-                    <div class="p-2">
-                        <h4 class="text-sm font-semibold text-[#C5E1B5]">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                        <p class="text-xs text-[#C5E1B5] pt-2">Uploaded 5 hours ago</p>
-                    </div>
-                </div>
-                <div class="rounded-lg w-40 flex-shrink-0 mr-4">
-                    <img src="/src/img/Frame97.png" alt="Berita 3" class="w-full h-40 object-cover rounded-lg">
-                    <div class="p-2">
-                        <h4 class="text-sm font-semibold text-[#C5E1B5]">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                        <p class="text-xs text-[#C5E1B5] pt-2">Uploaded 1 day ago</p>
-                    </div>
-                </div>
-                <div class="rounded-lg w-40 flex-shrink-0 mr-4">
-                    <img src="/src/img/Rectangle 12.png" alt="Berita 4" class="w-full h-40 object-cover rounded-lg">
-                    <div class="p-2">
-                        <h4 class="text-sm font-semibold text-[#C5E1B5]">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h4>
-                        <p class="text-xs text-[#C5E1B5] pt-2">Uploaded 3 days ago</p>
-                    </div>
-                </div>
-                <div class="rounded-lg w-40 flex-shrink-0 mr-4">
-                    <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-lg">
-                    <div class="p-2">
-                        <h4 class="text-sm font-semibold text-[#C5E1B5]">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
-                        <p class="text-xs text-[#C5E1B5] pt-2">Uploaded 4 days ago</p>
-                    </div>
-                </div>
-                <div class="rounded-lg w-40 flex-shrink-0 mr-4">
-                    <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-lg">
-                    <div class="p-2">
-                        <h4 class="text-sm font-semibold text-[#C5E1B5]">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                        <p class="text-xs text-[#C5E1B5] pt-2">Uploaded 4 days ago</p>
-                    </div>
-                </div>
-                <div class="rounded-lg w-40 flex-shrink-0 mr-4">
-                    <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-lg">
-                    <div class="p-2">
-                        <h4 class="text-sm font-semibold text-[#C5E1B5]">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h4>
-                        <p class="text-xs text-[#C5E1B5] pt-2">Uploaded 4 days ago</p>
-                    </div>
-                </div>
-                <div class="rounded-lg w-40 flex-shrink-0 mr-4">
-                    <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-lg">
-                    <div class="p-2">
-                        <h4 class="text-sm font-semibold text-[#C5E1B5]">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
-                        <p class="text-xs text-[#C5E1B5] pt-2">Uploaded 4 days ago</p>
-                    </div>
-                </div>
-                <div class="rounded-lg w-40 flex-shrink-0 mr-4">
-                    <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-lg">
-                    <div class="p-2">
-                        <h4 class="text-sm font-semibold text-[#C5E1B5]">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                        <p class="text-xs text-[#C5E1B5] pt-2">Uploaded 4 days ago</p>
-                    </div>
-                </div>
-                <div class="rounded-lg w-40 flex-shrink-0 mr-4">
-                    <img src="/src/img/Rectangle 15.png" alt="Berita 5" class="w-full h-40 object-cover rounded-lg">
-                    <div class="p-2">
-                        <h4 class="text-sm font-semibold text-[#C5E1B5]">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                        <p class="text-xs text-[#C5E1B5] pt-2">Uploaded 4 days ago</p>
-                    </div>
+            <div class="text-[#272742]">
+                <img src="img/Large Card.svg" alt="Gambar Pendukung" class="w-[100%] h-[500px] object-cover rounded-lg mb-4">
+                    <p class="text-lg md:text-base">
+                        <span class="font-bold">Jakarta- </span>
+                        Sekretaris Jenderal Kementerian Pertahanan (Sekjen Kemhan) Marsekal Madya TNI Donny Ermawan Taufanto mengungkapkan dewasa ini ancaman yang dihadapi negara bukan hanya dalam bentuk militer, tapi juga dari nonmiliter. Untuk itu, dia menilai kompleksitas ancaman harus dihadapi dengan bela negara.
+                        "Perkembangan lingkungan strategis baik global, regional, maupun nasional yang sangat dinamis dan kompleks, memunculkan berbagai ancaman, baik ancaman militer, nonmiliter, maupun hibrida, yang diprediksi masih mengancam kepentingan nasional di masa mendatang," kata Donny dalam Acara Rembuk Nasional Tahun 2022 di Hotel Pullman, Jakarta Barat, Selasa (25/1/2022).
+                    </p>
+                    <p class="text-lg md:text-base mt-6">
+                        "Kompleksitas ancaman inilah yang perlu dipahami dan dimengerti kita semua sebagai bagian dari unsur pertahanan negara. Untuk itu, diperlukan strategi yang ampuh dalam menghadapi segala bentuk ancaman, salah satunya adalah dengan bela negara," sambungnya.
+                    </p>
+                    <p class="text-lg md:text-base mt-6">
+                        Donny menyebut bela negara menjadi salah satu strategi pertahanan negara. Seluruh komponen bangsa, kata Donny, akan bersatu menyamakan visi-misi untuk kedaulatan dan keutuhan negara.
+                    </p>
+                    <p class="text-lg md:text-base mt-6">
+                        "Bela negara diyakini sebagai salah satu strategi dalam penyelenggaraan pertahanan negara di mana seluruh komponen bangsa bersatu, menyamakan visi-misi dalam usaha menjaga kedaulatan negara, keutuhan wilayah, serta keselamatan bangsa dan negara," katanya.
+                    </p>
+                    <p class="text-lg md:text-base mt-6">
+                        Donny menerangkan bela negara bukan hanya menjadi tugas dan kewajiban Kementerian Pertahanan, TNI dan Polri semata. Akan tetapi, menurut Donny, bela negara menjadi tugas dan kewajiban semua warga negara Indonesia sebagai bagian dari komponen bangsa.
+                    </p>
+                    <p class="text-lg md:text-base mt-6">
+                        "Sejarah telah membuktikan bahwa negara Indonesia dibentuk oleh komponen bangsa, pembentukan ini berawal dari pengorbanan yang dilakukan berpuluh-puluh tahun yang lalu dengan semangat bela negara. Dengan demikian bela negara bukan hanya menjadi tugas dan kewajiban Kementerian Pertahanan, TNI dan Polri semata, bela negara merupakan tugas dan kewajiban warga negara Indonesia sebagai bagian dari komponen bangsa," papar Donny.
+                    </p>
+                    <p class="text-lg md:text-base mt-6">
+                        Donny menyebut bela negara tidak mengenal latar belakang pendidikan dan pekerjaan. Semua warga negara Indonesia memiliki kewajiban untuk membela negara seperti dari kementerian lembaga, pemerintah daerah dan perusahaan swasta.
+                    </p>
+                    <p class="text-lg md:text-base mt-6">
+                        "Apa pun pendidikan latar belakang dan pekerjaan kita, semua memiliki hak kewajiban dan kesempatan yang sama untuk bela negara. Oleh karenanya dalam pelaksanaan bela negara bagi seluruh komponen bangsa, Kementerian Pertahanan membutuhkan peran dari Kementerian lembaga, TNI Polri, pemerintah daerah, BUMN serta perusahaan swasta," ungkapnya.
+                    </p>
+                    <p class="text-lg md:text-base mt-6">
+                        Lebih lanjut, Donny berharap acara Rembuk Nasional 2022 yang diikuti kementerian lembaga ini dapat berjalan lancar. Dia berharap melalui kegiatan ini, para peserta dapat mengetahui dan mendukung program pembinaan kesadaran bela negara.
+                    </p>
+                    <p class="text-lg md:text-base mt-6">
+                        "Untuk itu, Rembuk Nasional Bela Negara tahun 2022 ini mengambil tema optimalisasi peran kementerian lembaga TNI Polri, pemerintah daerah dan komponen bangsa dalam menstandardisasikan program pembinaan kesadaran bela negara. Melalui kegiatan Rembuk Nasional ini, saya berharap akan dapat diketahui peran serta Kementerian lembaga pemerintah daerah TNI Polri dan komponen bangsa dalam mendukung program pembinaan kesadaran bela negara," tuturnya.
+                    </p> 
                 </div>
             </div>
         </div>
-    </section>
-    <footer class="bg-green-950 text-white py-4 md:py-8">
+
+        <section class="slider-container mt-12 w-full">
+            <button id="leftArrow" class="slider-arrow left" onclick="slide(-1)" aria-label="Previous">
+                <img src="/src/img/arrow-left.svg" alt="" class="w-7">
+            </button>
+            <h3 class="pl-4 pt-2 text-[#172812]">Berita Terbaru</h3>
+            <div id="sliderTrack" class="slider-track">
+                <div class="slider-card rounded-lg overflow-hidden flex flex-col">
+                    <a href="">
+                        <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
+                    </a>
+                    <div class="p-6">
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card rounded-lg overflow-hidden flex flex-col">
+                    <a href="">
+                        <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
+                    </a>                    
+                    <div class="p-6">
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card rounded-lg overflow-hidden flex flex-col">
+                    <a href="">
+                        <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
+                    </a>                    
+                    <div class="p-6">
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card rounded-lg overflow-hidden flex flex-col">
+                    <a href="">
+                        <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
+                    </a>                    
+                    <div class="p-6">
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card rounded-lg overflow-hidden flex flex-col">
+                    <a href="">
+                        <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
+                    </a>                    
+                    <div class="p-6">
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card rounded-lg overflow-hidden flex flex-col">
+                    <a href="">
+                        <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
+                    </a>                    
+                    <div class="p-6">
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card rounded-lg overflow-hidden flex flex-col">
+                    <a href="">
+                        <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
+                    </a>                    
+                    <div class="p-6">
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card rounded-lg overflow-hidden flex flex-col">
+                    <a href="">
+                        <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
+                    </a>                    
+                    <div class="p-6">
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card rounded-lg overflow-hidden flex flex-col">
+                    <a href="">
+                        <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
+                    </a>                    
+                    <div class="p-6">
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card rounded-lg overflow-hidden flex flex-col">
+                    <a href="">
+                        <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
+                    </a>                    
+                    <div class="p-6">
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card rounded-lg overflow-hidden flex flex-col">
+                    <a href="">
+                        <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
+                    </a>                    
+                    <div class="p-6">
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+                <div class="slider-card rounded-lg overflow-hidden flex flex-col">
+                    <a href="">
+                        <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
+                    </a>                    
+                    <div class="p-6">
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
+                    </div>
+                </div>
+            </div>
+            <button id="rightArrow" class="slider-arrow right" onclick="slide(1)" aria-label="Next">
+                <img src="/src/img/arrow-right.svg" alt="" class="w-7">
+            </button>
+        </section>
+    </main>
+    
+    <footer class="bg-[#172812] text-[#FBFCFE] py-4 md:py-8">
         <div class="mx-auto px-6 flex flex-col md:flex-row justify-between md:gap-x-16 space-y-8 md:space-y-0">
             <div class="mb-4 md:mb-0 space-y-3">
-                <h3 class="font-semibold text-xl mb-4">UPN Museum Virtual</h3>
-                <p class="text-xl">Jalan R.S. Fatmawati Raya, Pondok Labu, Cilandak, South Jakarta City,<br>Jakarta 12450</p>
-                <p class="text-xl">Email: <a href="mailto:info@museumvirtual.id" class="underline text-blue-600">info@museumvirtual.id</a></p>
-                <p class="text-xl">Telepon: (0274) 123456</p>
+                <h3 class="font-semibold text-xl mb-4 text-[#FBFCFE]">UPN Museum Virtual</h3>
+                <p class="text-xl text-[#FBFCFE]">Jalan R.S. Fatmawati Raya, Pondok</p>
+                <p class="text-xl text-[#FBFCFE]">Labu, Cilandak, South Jakarta City,<br>Jakarta 12450</p>
+                <p class="text-xl text-[#FBFCFE]">
+                    Email: 
+                    <a href="#" id="email-link" class="underline text-[#4B4DED]">
+                        kelompokmuseumabn@gmail.com
+                    </a>
+                </p>
+                <div id="email-popup" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+                    <div class="bg-[#FBFCFE] rounded-lg p-6 w-96">
+                        <h2 class="text-xl font-bold mb-4 text-[#272742]">Pilih Tindakan</h2>
+                        <p class="mb-4 text-[#272742]">Apa yang ingin Anda lakukan?</p>
+                        <div class="flex justify-between">
+                            <button id="ask-question" class="bg-blue-500 text-[#272742] py-2 px-4 rounded transition-transform duration-300 ease-in-out hover:bg-blue-600 hover:scale-105">
+                                Bertanya
+                            </button>
+                            <button id="give-feedback" class="bg-green-500 text-[#272742] py-2 px-4 rounded transition-transform duration-300 ease-in-out hover:bg-green-600 hover:scale-105">
+                                Kritik/Saran
+                            </button>
+                        </div>                        
+                        <button id="close-popup" class="mt-4 text-[#272742] underline">Batal</button>
+                    </div>
+                </div>
+                <p class="text-xl text-[#FBFCFE]">
+                    Telepon: <a href="tel:(021) 7656971" class="text-[#4B4DED]">(021) 7656971</a>
+                </p>
             </div>
             <div class="mb-4 md:mb-0 space-y-4">
-                <h3 class="font-semibold text-xl mb-4">Navigasi</h3>
-                <ul class="space-y-2"> 
-                    <li><a href="/src/main.html" class="hover:underline text-xl">Beranda</a></li>
-                    <li><a href="/src/galeri.html" class="hover:underline text-xl">Galeri</a></li>
-                    <li><a href="/src/berita.html" class="hover:underline text-xl">Berita</a></li>
-                    <li><a href="/src/about_us.html" class="hover:underline text-xl">Tentang Kami</a></li>
+                <h3 class="font-semibold text-xl mb-4 text-[#FBFCFE]">Navigasi</h3>
+                <ul class="space-y-2">
+                    <li><a href="main.html" class="hover:underline text-xl text-[#FBFCFE]">Beranda</a></li>
+                    <li><a href="galeri.html" class="hover:underline text-xl text-[#FBFCFE]">Galeri</a></li>
+                    <li><a href="berita.html" class="hover:underline text-xl text-[#FBFCFE]">Berita</a></li>
+                    <li><a href="about_us.html" class="hover:underline text-xl text-[#FBFCFE]">Tentang Kami</a></li>
                 </ul>
             </div>
             <div class="space-y-3">
                 <h3 class="font-semibold text-xl mb-4">Ikuti Kami</h3>
                 <div class="flex space-x-4">
-                    <a href="https://wa.me/6281380461288?text=Halo%20saya%20tertarik%20dengan%20informasi%20museum" target="_blank">
+                    <a href="https://wa.me/6281380461288?text=Kami%20sangat%20berterima%20kasih%20atas%20perhatian%20yang%20Anda%20berikan%20dan%20kesempatan%20untuk%20dapat%20berkomunikasi%20dengan%20Anda.%20Masukan%20dan%20pertanyaan%20Anda%20merupakan%20hal%20yang%20sangat%20berharga%20bagi%20kami.%0A%0ASekali%20lagi,%20terima%20kasih%20telah%20mempercayai%20kami%20untuk%20membantu%20Anda.%20Kami%20berharap%20dapat%20terus%20memberikan%20layanan%20terbaik%20sesuai%20dengan%20kebutuhan%20Anda." 
+                        target="_blank">
                         <img src="/src/img/whatsapp.svg" alt="WhatsApp" class="w-6 h-6">
-                    </a>                    
+                    </a>
                     <a href="https://www.instagram.com/farsbiy" target="_blank">
                         <img src="/src/img/instagram.svg" alt="Instagram" class="w-6 h-6">
-                    </a>                    
+                    </a>
                     <a href="https://www.facebook.com/Ramaardhani2" target="_blank">
                         <img src="/src/img/facebook.svg" alt="Facebook" class="w-6 h-6">
                     </a>
-                    <a href="#"><img src="/src/img/telegram.svg" alt="Telegram" class="w-6 h-6"></a>
+                    <a href="https://t.me/+6281380461288?start=Kami%20sangat%20berterima%20kasih%20atas%20perhatian%20yang%20Anda%20berikan%20dan%20kesempatan%20untuk%20dapat%20berkomunikasi%20dengan%20Anda.%20Masukan%20dan%20pertanyaan%20Anda%20merupakan%20hal%20yang%20sangat%20berharga%20bagi%20kami.%0A%0ASekali%20lagi,%20terima%20kasih%20telah%20mempercayai%20kami%20untuk%20membantu%20Anda.%20Kami%20berharap%20dapat%20terus%20memberikan%20layanan%20terbaik%20sesuai%20dengan%20kebutuhan%20Anda." 
+                        target="_blank">
+                        <img src="/src/img/telegram.svg" alt="Telegram" class="w-6 h-6">
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+    
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const emailLink = document.getElementById('email-link');
+        const emailPopup = document.getElementById('email-popup');
+        const askQuestion = document.getElementById('ask-question');
+        const giveFeedback = document.getElementById('give-feedback');
+        const closePopup = document.getElementById('close-popup');
+
+        emailLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            emailPopup.classList.remove('hidden');
+        });
+
+        askQuestion.addEventListener('click', () => {
+            const subject = encodeURIComponent("Pertanyaan");
+            const body = encodeURIComponent("Halo, saya ingin bertanya tentang...");
+            window.location.href = `mailto:kelompokmuseumabn@gmail.com?subject=${subject}&body=${body}`;
+            emailPopup.classList.add('hidden');
+        });
+
+        giveFeedback.addEventListener('click', () => {
+            const subject = encodeURIComponent("Kritik/Saran");
+            const body = encodeURIComponent("Halo, saya ingin memberikan kritik/saran tentang...");
+            window.location.href = `mailto:kelompokmuseumabn@gmail.com?subject=${subject}&body=${body}`;
+            emailPopup.classList.add('hidden');
+        });
+
+        closePopup.addEventListener('click', () => {
+            emailPopup.classList.add('hidden');
+        });
+
+        let currentIndex = 0;
+        let autoSlideInterval;
+
+        function updateArrows() {
+            const totalSlides = document.getElementById('sliderTrack').children.length;
+            const slidesPerView = window.innerWidth > 768 ? 4 : 1;
+        }
+
+        function slide(direction) {
+            const track = document.getElementById('sliderTrack');
+            const totalSlides = track.children.length;
+            const slidesPerView = window.innerWidth > 768 ? 4 : 1;
+            const sliderWidth = track.clientWidth / slidesPerView;
+
+            currentIndex += direction * slidesPerView;
+
+            if (currentIndex >= totalSlides) {
+                currentIndex = 0;
+            }
+
+            if (currentIndex < 0) {
+                currentIndex = totalSlides - slidesPerView;
+            }
+
+            track.style.transform = `translateX(-${currentIndex * sliderWidth}px)`;
+        }
+
+        function startAutoSlide() {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(() => {
+                slide(1);
+            }, 3000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        updateArrows();
+        startAutoSlide();
+
+        window.addEventListener('resize', () => {
+            updateArrows();
+
+            const track = document.getElementById('sliderTrack');
+            const slidesPerView = window.innerWidth > 768 ? 4 : 1;
+            const sliderWidth = track.clientWidth / slidesPerView;
+            track.style.transform = `translateX(-${currentIndex * sliderWidth}px)`;
+        });
+
+        const sliderContainer = document.querySelector('.slider-container');
+
+        sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+        sliderContainer.addEventListener('mouseleave', startAutoSlide);
+
+        document.querySelectorAll('.slider-card').forEach(card => {
+            card.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+        });
+
+    </script>
 </body>
 </html>

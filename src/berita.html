@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        .hidden {
+            display: none;
+        }
+
         .slider-container {
             position: relative;
             overflow: hidden;
@@ -76,27 +80,27 @@
 </head>
 <body class="font-poppins">
     <header class="relative">
-        <nav class="fixed top-0 left-0 right-0 z-20 flex justify-between items-center p-4 bg-green-950 bg-opacity-90 backdrop-blur-md">
+        <nav class="fixed top-0 left-0 right-0 z-20 flex justify-between items-center p-4 bg-[#172812] bg-opacity-90 backdrop-blur-md">
             <div class="flex items-center">
                 <img src="/src/img/LOGO UPNVJ.png" alt="Logo" class="w-12 h-12">
-                <div class="ml-4 text-white">
+                <div class="ml-4 text-[#FBFCFE]">
                     <h1 class="text-lg font-bold">Museum Bela Negara</h1>
                     <p class="text-sm">UPN "Veteran" Jakarta</p>
                 </div>
             </div>
-            <button id="hamburger" class="md:hidden text-white focus:outline-none">
+            <button id="hamburger" class="md:hidden text-[#FBFCFE] focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
-            <div id="menu" class="hidden md:flex space-x-4 text-white text-lg">
+            <div id="menu" class="hidden md:flex space-x-4 text-[#FBFCFE] text-lg">
                 <a href="/src/main.html" class="hover:underline">Beranda</a>
                 <a href="/src/galeri.html" class="hover:underline">Galeri</a>
                 <a href="/src/berita.html" class="hover:underline">Berita</a>
                 <a href="/src/about_us.html" class="hover:underline">Tentang Kami</a>
             </div>
         </nav>
-        <div id="mobileMenu" class="hidden fixed top-16 left-0 right-0 bg-green-950 text-white text-lg px-4 py-2 space-y-2 z-20 box-border">
+        <div id="mobileMenu" class="hidden fixed top-20 left-0 right-0 bg-[#172812] bg-opacity-90 backdrop-blur-md text-[#FBFCFE] text-lg px-4 py-4 space-y-4 z-20 box-border">
             <a href="/src/main.html" class="block hover:underline">Beranda</a>
             <a href="/src/galeri.html" class="block hover:underline">Galeri</a>
             <a href="/src/berita.html" class="block hover:underline">Berita</a>
@@ -108,147 +112,124 @@
         <div class="relative w-full shadow-2xl">
             <img src="/src/img/Frame96.png" alt="Gambar" class="w-full h-auto object-cover rounded-xl">
             <div class="absolute bottom-0 left-0 p-4 bg-gradient-to-t rounded-b-xl">
-                <h2 class="text-white text-xl md:text-2xl font-bold">Perpisahan Magang Kampus Merdeka:</h2>
-                <h2 class="text-white text-lg md:text-xl font-semibold">Pemahaman Holistik Dalam Dunia Pemuseuman</h2>
-                <p class="text-white text-sm md:text-base">Desember 17, 2023</p>
+                <h2 class="text-[#FBFCFE] text-xl md:text-2xl font-bold">Perpisahan Magang Kampus Merdeka:</h2>
+                <h2 class="text-[#FBFCFE] text-lg md:text-xl font-semibold">Pemahaman Holistik Dalam Dunia Pemuseuman</h2>
+                <p class="text-[#FBFCFE] text-sm md:text-base">Desember 17, 2023</p>
             </div>
         </div>
+
         <section class="slider-container mt-12 w-full">
             <button id="leftArrow" class="slider-arrow left" onclick="slide(-1)" aria-label="Previous">
                 <img src="/src/img/arrow-left.svg" alt="" class="w-7">
             </button>
-            <h3 class="pl-1 pt-2 text-[#172812]">Lastest News</h3>
+            <h3 class="pl-1 pt-2 text-[#172812]">Berita Terbaru</h3>
             <div id="sliderTrack" class="slider-track">
                 <div class="slider-card rounded-lg overflow-hidden flex flex-col">
-                    <a href="">
+                    <a href="berita_detail.html">
                         <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
                     </a>
                     <div class="p-6">
-                        <h2 class="text-black text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
-                        <p class="text-black text-sm md:text-base">Sambut Umat Katolik</p>
-                        <p class="text-black mb-2 text-sm md:text-base">Tuli Asia</p>
-                        <p class="text-black text-xs md:text-sm">8 hours ago</p>
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
                     </div>
                 </div>
                 <div class="slider-card rounded-lg overflow-hidden flex flex-col">
-                    <a href="">
+                    <a href="berita_detail.html">
                         <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
                     </a>                    
                     <div class="p-6">
-                        <h2 class="text-black text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
-                        <p class="text-black text-sm md:text-base">Sambut Umat Katolik</p>
-                        <p class="text-black mb-2 text-sm md:text-base">Tuli Asia</p>
-                        <p class="text-black text-xs md:text-sm">8 hours ago</p>
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
                     </div>
                 </div>
                 <div class="slider-card rounded-lg overflow-hidden flex flex-col">
-                    <a href="">
+                    <a href="berita_detail.html">
                         <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
                     </a>                    
                     <div class="p-6">
-                        <h2 class="text-black text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
-                        <p class="text-black text-sm md:text-base">Sambut Umat Katolik</p>
-                        <p class="text-black mb-2 text-sm md:text-base">Tuli Asia</p>
-                        <p class="text-black text-xs md:text-sm">8 hours ago</p>
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
                     </div>
                 </div>
                 <div class="slider-card rounded-lg overflow-hidden flex flex-col">
-                    <a href="">
+                    <a href="berita_detail.html">
                         <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
                     </a>                    
                     <div class="p-6">
-                        <h2 class="text-black text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
-                        <p class="text-black text-sm md:text-base">Sambut Umat Katolik</p>
-                        <p class="text-black mb-2 text-sm md:text-base">Tuli Asia</p>
-                        <p class="text-black text-xs md:text-sm">8 hours ago</p>
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
                     </div>
                 </div>
                 <div class="slider-card rounded-lg overflow-hidden flex flex-col">
-                    <a href="">
+                    <a href="berita_detail.html">
                         <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
                     </a>                    
                     <div class="p-6">
-                        <h2 class="text-black text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
-                        <p class="text-black text-sm md:text-base">Sambut Umat Katolik</p>
-                        <p class="text-black mb-2 text-sm md:text-base">Tuli Asia</p>
-                        <p class="text-black text-xs md:text-sm">8 hours ago</p>
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
                     </div>
                 </div>
                 <div class="slider-card rounded-lg overflow-hidden flex flex-col">
-                    <a href="">
+                    <a href="berita_detail.html">
                         <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
                     </a>                    
                     <div class="p-6">
-                        <h2 class="text-black text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
-                        <p class="text-black text-sm md:text-base">Sambut Umat Katolik</p>
-                        <p class="text-black mb-2 text-sm md:text-base">Tuli Asia</p>
-                        <p class="text-black text-xs md:text-sm">8 hours ago</p>
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
                     </div>
                 </div>
                 <div class="slider-card rounded-lg overflow-hidden flex flex-col">
-                    <a href="">
+                    <a href="berita_detail.html">
                         <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
                     </a>                    
                     <div class="p-6">
-                        <h2 class="text-black text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
-                        <p class="text-black text-sm md:text-base">Sambut Umat Katolik</p>
-                        <p class="text-black mb-2 text-sm md:text-base">Tuli Asia</p>
-                        <p class="text-black text-xs md:text-sm">8 hours ago</p>
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
                     </div>
                 </div>
                 <div class="slider-card rounded-lg overflow-hidden flex flex-col">
-                    <a href="">
+                    <a href="berita_detail.html">
                         <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
                     </a>                    
                     <div class="p-6">
-                        <h2 class="text-black text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
-                        <p class="text-black text-sm md:text-base">Sambut Umat Katolik</p>
-                        <p class="text-black mb-2 text-sm md:text-base">Tuli Asia</p>
-                        <p class="text-black text-xs md:text-sm">8 hours ago</p>
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
                     </div>
                 </div>
                 <div class="slider-card rounded-lg overflow-hidden flex flex-col">
-                    <a href="">
+                    <a href="berita_detail.html">
                         <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
                     </a>                    
                     <div class="p-6">
-                        <h2 class="text-black text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
-                        <p class="text-black text-sm md:text-base">Sambut Umat Katolik</p>
-                        <p class="text-black mb-2 text-sm md:text-base">Tuli Asia</p>
-                        <p class="text-black text-xs md:text-sm">8 hours ago</p>
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
                     </div>
                 </div>
                 <div class="slider-card rounded-lg overflow-hidden flex flex-col">
-                    <a href="">
+                    <a href="berita_detail.html">
                         <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
                     </a>                    
                     <div class="p-6">
-                        <h2 class="text-black text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
-                        <p class="text-black text-sm md:text-base">Sambut Umat Katolik</p>
-                        <p class="text-black mb-2 text-sm md:text-base">Tuli Asia</p>
-                        <p class="text-black text-xs md:text-sm">8 hours ago</p>
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
                     </div>
                 </div>
                 <div class="slider-card rounded-lg overflow-hidden flex flex-col">
-                    <a href="">
+                    <a href="berita_detail.html">
                         <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
                     </a>                    
                     <div class="p-6">
-                        <h2 class="text-black text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
-                        <p class="text-black text-sm md:text-base">Sambut Umat Katolik</p>
-                        <p class="text-black mb-2 text-sm md:text-base">Tuli Asia</p>
-                        <p class="text-black text-xs md:text-sm">8 hours ago</p>
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
                     </div>
                 </div>
                 <div class="slider-card rounded-lg overflow-hidden flex flex-col">
-                    <a href="">
+                    <a href="berita_detail.html">
                         <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg">
                     </a>                    
                     <div class="p-6">
-                        <h2 class="text-black text-xl md:text-2xl font-bold mb-2">Museum Batik Indonesia</h2>
-                        <p class="text-black text-sm md:text-base">Sambut Umat Katolik</p>
-                        <p class="text-black mb-2 text-sm md:text-base">Tuli Asia</p>
-                        <p class="text-black text-xs md:text-sm">8 hours ago</p>
+                        <h2 class="text-[#172812] text-xl md:text-2xl mb-2">Museum Batik Indonesia</h2>
+                        <p class="text-[#272742] text-xs md:text-sm">8 hours ago</p>
                     </div>
                 </div>
             </div>
@@ -256,81 +237,112 @@
                 <img src="/src/img/arrow-right.svg" alt="" class="w-7">
             </button>
         </section>
+
         <section class="mt-12 w-full">
             <article class="overflow-hidden flex flex-col md:flex-row mb-8 items-center md:items-start">
-                <a href="" class="flex-shrink-0 w-full md:w-1/3">
+                <a href="berita_detail.html" class="flex-shrink-0 w-full md:w-1/3">
                     <img src="/src/img/Rectangle 12.png" alt="Image 1" class="w-full h-auto object-cover rounded-lg md:h-full">
                 </a>
-                <div class="p-6 w-full md:w-2/3 flex flex-col justify-center">
+                <div class="pl-6 w-full md:w-2/3 flex flex-col justify-center">
                     <h2 class="text-[#172812] text-2xl md:text-3xl font-bold mb-2">DKI Jakarta Raih Piala Mahavidya pada LCCM 2023, Mendikbudristek Dorong Generasi Muda Cintai Museum</h2>
-                    <p class="text-[#272742] mb-4 text-sm md:text-base">Jakarta, 12 Oktober 2023 – Lomba Cerdas Cermat Museum (LCCM) tahun 2023 secara resmi ditutup yang ditandai dengan pengumuman para pemenang. Peraih juara pertama adalah Provinsi DKI Jakarta dan berhak mendapatkan Piala Mahavidya, yaitu piala bergilir dari Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi (Mendikbudristek). Piala Mahavidya mewakili semangat LCCM dalam berkompetisi merayakan pengetahuan, intelektualitas, dan prestasi.</p>
+                    <p class="text-[#272742] mt-6 mb-4 text-sm md:text-base">Jakarta, 12 Oktober 2023 – Lomba Cerdas Cermat Museum (LCCM) tahun 2023 secara resmi ditutup yang ditandai dengan pengumuman para pemenang. Peraih juara pertama adalah Provinsi DKI Jakarta dan berhak mendapatkan Piala Mahavidya, yaitu piala bergilir dari Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi (Mendikbudristek). Piala Mahavidya mewakili semangat LCCM dalam berkompetisi merayakan pengetahuan, intelektualitas, dan prestasi.</p>
                 </div>
             </article>
             <article class="overflow-hidden flex flex-col md:flex-row mb-8 items-center md:items-start">
-                <a href="" class="flex-shrink-0 w-full md:w-1/3">
+                <a href="berita_detail.html" class="flex-shrink-0 w-full md:w-1/3">
                     <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-auto object-cover rounded-lg md:h-full">
                 </a>
-                <div class="p-6 w-full md:w-2/3 flex flex-col justify-center">
+                <div class="pl-6 w-full md:w-2/3 flex flex-col justify-center">
                     <h2 class="text-[#172812] text-2xl md:text-3xl font-bold mb-2">DKI Jakarta Raih Piala Mahavidya pada LCCM 2023, Mendikbudristek Dorong Generasi Muda Cintai Museum</h2>
-                    <p class="text-[#272742] mb-4 text-sm md:text-base">Jakarta, 12 Oktober 2023 – Lomba Cerdas Cermat Museum (LCCM) tahun 2023 secara resmi ditutup yang ditandai dengan pengumuman para pemenang. Peraih juara pertama adalah Provinsi DKI Jakarta dan berhak mendapatkan Piala Mahavidya, yaitu piala bergilir dari Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi (Mendikbudristek). Piala Mahavidya mewakili semangat LCCM dalam berkompetisi merayakan pengetahuan, intelektualitas, dan prestasi.</p>
+                    <p class="text-[#272742] mt-6 mb-4 text-sm md:text-base">Jakarta, 12 Oktober 2023 – Lomba Cerdas Cermat Museum (LCCM) tahun 2023 secara resmi ditutup yang ditandai dengan pengumuman para pemenang. Peraih juara pertama adalah Provinsi DKI Jakarta dan berhak mendapatkan Piala Mahavidya, yaitu piala bergilir dari Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi (Mendikbudristek). Piala Mahavidya mewakili semangat LCCM dalam berkompetisi merayakan pengetahuan, intelektualitas, dan prestasi.</p>
                 </div>
             </article>
             
             <article class="overflow-hidden flex flex-col md:flex-row mb-8 items-center md:items-start">
-                <a href="" class="flex-shrink-0 w-full md:w-1/3">
+                <a href="berita_detail.html" class="flex-shrink-0 w-full md:w-1/3">
                     <img src="/src/img/Rectangle 15.png" alt="Image 1" class="w-full h-auto object-cover rounded-lg md:h-full">
                 </a>
-                <div class="p-6 w-full md:w-2/3 flex flex-col justify-center">
+                <div class="pl-6 w-full md:w-2/3 flex flex-col justify-center">
                     <h2 class="text-[#172812] text-2xl md:text-3xl font-bold mb-2">DKI Jakarta Raih Piala Mahavidya pada LCCM 2023, Mendikbudristek Dorong Generasi Muda Cintai Museum</h2>
-                    <p class="text-[#272742] mb-4 text-sm md:text-base">Jakarta, 12 Oktober 2023 – Lomba Cerdas Cermat Museum (LCCM) tahun 2023 secara resmi ditutup yang ditandai dengan pengumuman para pemenang. Peraih juara pertama adalah Provinsi DKI Jakarta dan berhak mendapatkan Piala Mahavidya, yaitu piala bergilir dari Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi (Mendikbudristek). Piala Mahavidya mewakili semangat LCCM dalam berkompetisi merayakan pengetahuan, intelektualitas, dan prestasi.</p>
+                    <p class="text-[#272742] mt-6 mb-4 text-sm md:text-base">Jakarta, 12 Oktober 2023 – Lomba Cerdas Cermat Museum (LCCM) tahun 2023 secara resmi ditutup yang ditandai dengan pengumuman para pemenang. Peraih juara pertama adalah Provinsi DKI Jakarta dan berhak mendapatkan Piala Mahavidya, yaitu piala bergilir dari Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi (Mendikbudristek). Piala Mahavidya mewakili semangat LCCM dalam berkompetisi merayakan pengetahuan, intelektualitas, dan prestasi.</p>
                 </div>
             </article>
             
             <article class="overflow-hidden flex flex-col md:flex-row mb-8 items-center md:items-start">
-                <a href="" class="flex-shrink-0 w-full md:w-1/3">
+                <a href="berita_detail.html" class="flex-shrink-0 w-full md:w-1/3">
                     <img src="/src/img/Rectangle 12.png" alt="Image 1" class="w-full h-auto object-cover rounded-lg md:h-full">
                 </a>
-                <div class="p-6 w-full md:w-2/3 flex flex-col justify-center">
+                <div class="pl-6 w-full md:w-2/3 flex flex-col justify-center">
                     <h2 class="text-[#172812] text-2xl md:text-3xl font-bold mb-2">DKI Jakarta Raih Piala Mahavidya pada LCCM 2023, Mendikbudristek Dorong Generasi Muda Cintai Museum</h2>
-                    <p class="text-[#272742] mb-4 text-sm md:text-base">Jakarta, 12 Oktober 2023 – Lomba Cerdas Cermat Museum (LCCM) tahun 2023 secara resmi ditutup yang ditandai dengan pengumuman para pemenang. Peraih juara pertama adalah Provinsi DKI Jakarta dan berhak mendapatkan Piala Mahavidya, yaitu piala bergilir dari Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi (Mendikbudristek). Piala Mahavidya mewakili semangat LCCM dalam berkompetisi merayakan pengetahuan, intelektualitas, dan prestasi.</p>
+                    <p class="text-[#272742] mt-6 mb-4 text-sm md:text-base">Jakarta, 12 Oktober 2023 – Lomba Cerdas Cermat Museum (LCCM) tahun 2023 secara resmi ditutup yang ditandai dengan pengumuman para pemenang. Peraih juara pertama adalah Provinsi DKI Jakarta dan berhak mendapatkan Piala Mahavidya, yaitu piala bergilir dari Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi (Mendikbudristek). Piala Mahavidya mewakili semangat LCCM dalam berkompetisi merayakan pengetahuan, intelektualitas, dan prestasi.</p>
                 </div>
             </article>
         </section>
+
     </main>
-    <footer class="bg-green-950 text-white py-4 md:py-8">
+
+    <footer class="bg-[#172812] text-[#FBFCFE] py-4 md:py-8">
         <div class="mx-auto px-6 flex flex-col md:flex-row justify-between md:gap-x-16 space-y-8 md:space-y-0">
             <div class="mb-4 md:mb-0 space-y-3">
-                <h3 class="font-semibold text-xl mb-4">UPN Museum Virtual</h3>
-                <p class="text-xl">Jalan R.S. Fatmawati Raya, Pondok Labu, Cilandak, South Jakarta City,<br>Jakarta 12450</p>
-                <p class="text-xl">Email: <a href="mailto:info@museumvirtual.id" class="underline text-blue-600">info@museumvirtual.id</a></p>
-                <p class="text-xl">Telepon: (0274) 123456</p>
+                <h3 class="font-semibold text-xl mb-4 text-[#FBFCFE]">UPN Museum Virtual</h3>
+                <p class="text-xl text-[#FBFCFE]">Jalan R.S. Fatmawati Raya, Pondok</p>
+                <p class="text-xl text-[#FBFCFE]">Labu, Cilandak, South Jakarta City,<br>Jakarta 12450</p>
+                <p class="text-xl text-[#FBFCFE]">
+                    Email: 
+                    <a href="#" id="email-link" class="underline text-[#4B4DED]">
+                        kelompokmuseumabn@gmail.com
+                    </a>
+                </p>
+                <div id="email-popup" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+                    <div class="bg-[#FBFCFE] rounded-lg p-6 w-96">
+                        <h2 class="text-xl font-bold mb-4 text-[#272742]">Pilih Tindakan</h2>
+                        <p class="mb-4 text-[#272742]">Apa yang ingin Anda lakukan?</p>
+                        <div class="flex justify-between">
+                            <button id="ask-question" class="bg-blue-500 text-[#272742] py-2 px-4 rounded transition-transform duration-300 ease-in-out hover:bg-blue-600 hover:scale-105">
+                                Bertanya
+                            </button>
+                            <button id="give-feedback" class="bg-green-500 text-[#272742] py-2 px-4 rounded transition-transform duration-300 ease-in-out hover:bg-green-600 hover:scale-105">
+                                Kritik/Saran
+                            </button>
+                        </div>                        
+                        <button id="close-popup" class="mt-4 text-[#272742] underline">Batal</button>
+                    </div>
+                </div>
+                <p class="text-xl text-[#FBFCFE]">
+                    Telepon: <a href="tel:(021) 7656971" class="text-[#4B4DED]">(021) 7656971</a>
+                </p>
             </div>
             <div class="mb-4 md:mb-0 space-y-4">
-                <h3 class="font-semibold text-xl mb-4">Navigasi</h3>
-                <ul class="space-y-2"> 
-                    <li><a href="/src/main.html" class="hover:underline text-xl">Beranda</a></li>
-                    <li><a href="/src/galeri.html" class="hover:underline text-xl">Galeri</a></li>
-                    <li><a href="/src/berita.html" class="hover:underline text-xl">Berita</a></li>
-                    <li><a href="/src/about_us.html" class="hover:underline text-xl">Tentang Kami</a></li>
+                <h3 class="font-semibold text-xl mb-4 text-[#FBFCFE]">Navigasi</h3>
+                <ul class="space-y-2">
+                    <li><a href="main.html" class="hover:underline text-xl text-[#FBFCFE]">Beranda</a></li>
+                    <li><a href="galeri.html" class="hover:underline text-xl text-[#FBFCFE]">Galeri</a></li>
+                    <li><a href="berita.html" class="hover:underline text-xl text-[#FBFCFE]">Berita</a></li>
+                    <li><a href="about_us.html" class="hover:underline text-xl text-[#FBFCFE]">Tentang Kami</a></li>
                 </ul>
             </div>
             <div class="space-y-3">
                 <h3 class="font-semibold text-xl mb-4">Ikuti Kami</h3>
                 <div class="flex space-x-4">
-                    <a href="https://wa.me/6281380461288?text=Halo%20saya%20tertarik%20dengan%20informasi%20museum" target="_blank">
+                    <a href="https://wa.me/6281380461288?text=Kami%20sangat%20berterima%20kasih%20atas%20perhatian%20yang%20Anda%20berikan%20dan%20kesempatan%20untuk%20dapat%20berkomunikasi%20dengan%20Anda.%20Masukan%20dan%20pertanyaan%20Anda%20merupakan%20hal%20yang%20sangat%20berharga%20bagi%20kami.%0A%0ASekali%20lagi,%20terima%20kasih%20telah%20mempercayai%20kami%20untuk%20membantu%20Anda.%20Kami%20berharap%20dapat%20terus%20memberikan%20layanan%20terbaik%20sesuai%20dengan%20kebutuhan%20Anda." 
+                        target="_blank">
                         <img src="/src/img/whatsapp.svg" alt="WhatsApp" class="w-6 h-6">
-                    </a>                    
+                    </a>
                     <a href="https://www.instagram.com/farsbiy" target="_blank">
                         <img src="/src/img/instagram.svg" alt="Instagram" class="w-6 h-6">
-                    </a>                    
+                    </a>
                     <a href="https://www.facebook.com/Ramaardhani2" target="_blank">
                         <img src="/src/img/facebook.svg" alt="Facebook" class="w-6 h-6">
                     </a>
-                    <a href="#"><img src="/src/img/telegram.svg" alt="Telegram" class="w-6 h-6"></a>
+                    <a href="https://t.me/+6281380461288?start=Kami%20sangat%20berterima%20kasih%20atas%20perhatian%20yang%20Anda%20berikan%20dan%20kesempatan%20untuk%20dapat%20berkomunikasi%20dengan%20Anda.%20Masukan%20dan%20pertanyaan%20Anda%20merupakan%20hal%20yang%20sangat%20berharga%20bagi%20kami.%0A%0ASekali%20lagi,%20terima%20kasih%20telah%20mempercayai%20kami%20untuk%20membantu%20Anda.%20Kami%20berharap%20dapat%20terus%20memberikan%20layanan%20terbaik%20sesuai%20dengan%20kebutuhan%20Anda." 
+                        target="_blank">
+                        <img src="/src/img/telegram.svg" alt="Telegram" class="w-6 h-6">
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
+
     <script>
         let currentIndex = 0;
         let autoSlideInterval;
@@ -398,6 +410,35 @@
     
         hamburger.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+
+        const emailLink = document.getElementById('email-link');
+        const emailPopup = document.getElementById('email-popup');
+        const askQuestion = document.getElementById('ask-question');
+        const giveFeedback = document.getElementById('give-feedback');
+        const closePopup = document.getElementById('close-popup');
+
+        emailLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            emailPopup.classList.remove('hidden');
+        });
+
+        askQuestion.addEventListener('click', () => {
+            const subject = encodeURIComponent("Pertanyaan");
+            const body = encodeURIComponent("Halo, saya ingin bertanya tentang...");
+            window.location.href = `mailto:kelompokmuseumabn@gmail.com?subject=${subject}&body=${body}`;
+            emailPopup.classList.add('hidden');
+        });
+
+        giveFeedback.addEventListener('click', () => {
+            const subject = encodeURIComponent("Kritik/Saran");
+            const body = encodeURIComponent("Halo, saya ingin memberikan kritik/saran tentang...");
+            window.location.href = `mailto:kelompokmuseumabn@gmail.com?subject=${subject}&body=${body}`;
+            emailPopup.classList.add('hidden');
+        });
+
+        closePopup.addEventListener('click', () => {
+            emailPopup.classList.add('hidden');
         });
     </script>
 </body>
